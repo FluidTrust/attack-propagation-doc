@@ -17,6 +17,11 @@ We created an Eclipse product, which can be used to start our analysis and view 
 (manual_installation)=
 ## Manual Installation
 Please make sure, that you have the [dependencies](dependencies) installed.
+
+For the manual installation you need the 
+
+
+
 (updatesite_installation)=
 ## Installation with the Update Site
 
@@ -42,6 +47,7 @@ For the execution of our attack propagation analysis the following dependencies 
     * jakarta.xml.bind version="2.3.3"
     * jakarta.activation version="1.2.2" 
     * org.apache.logging.log4j version="2.8.2"
+    * 
     
     
     
