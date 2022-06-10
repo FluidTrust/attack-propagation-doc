@@ -1,0 +1,25 @@
+name: Build Doc
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build -t build-doc .
+    - name: Build documentation
+      run: docker run --rm -v $GITHUB_WORKSPACE:/docs build-environment make html
+    - name: Deploy 🚀
+      if: github.ref == 'refs/heads/main'
+      uses: JamesIves/github-pages-deploy-action@v4.3.3
+      with:
+        branch: gh-pages
+        folder: docs/build/html
+        clean: true
