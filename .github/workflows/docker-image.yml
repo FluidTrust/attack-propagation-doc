@@ -16,7 +16,7 @@ jobs:
     - name: Build the Docker image
       run: docker build -t build-doc .
     - name: Build documentation
-      run: docker run --rm -v $GITHUB_WORKSPACE:/docs build-environment make html
+      run: docker run --rm -v $GITHUB_WORKSPACE:/docs build-doc make html
     - name: Deploy 🚀
       if: github.ref == 'refs/heads/main'
       uses: JamesIves/github-pages-deploy-action@v4.3.3
