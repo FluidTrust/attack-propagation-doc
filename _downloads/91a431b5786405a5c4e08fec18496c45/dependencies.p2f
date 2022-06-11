@@ -1,0 +1,248 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?p2f version='1.0.0'?>
+<p2f version='1.0.0'>
+  <ius size='43'>
+    <iu id='org.apache.commons.lang3' name='Apache Commons Lang' version='3.1.0.v201403281430'>
+      <repositories size='5'>
+        <repository location='https://download.eclipse.org/tools/orbit/downloads/drops/R20210825222808/repository'/>
+        <repository location='https://download.eclipse.org/releases/latest'/>
+        <repository location='https://download.eclipse.org/releases/2021-09/'/>
+        <repository location='https://download.eclipse.org/releases/2021-06/'/>
+        <repository location='https://download.eclipse.org/releases/2021-12/'/>
+      </repositories>
+    </iu>
+    <iu id='org.apache.commons.lang3.source' name='Apache Commons Lang Source' version='3.1.0.v201403281430'>
+      <repositories size='1'>
+        <repository location='https://download.eclipse.org/tools/orbit/downloads/drops/R20210825222808/repository'/>
+      </repositories>
+    </iu>
+    <iu id='tools.mdsd.library.emfeditutils.feature.feature.group' name='EMF Edit Utils Feature' version='0.1.0.202202202207'>
+      <repositories size='2'>
+        <repository location='https://updatesite.palladio-simulator.com/fluidtrust/fluidtrust-build-updatesite/nightly/'/>
+        <repository location='https://updatesite.mdsd.tools/library-emfeditutils/nightly/'/>
+      </repositories>
+    </iu>
+    <iu id='tools.mdsd.library.emfeditutils.feature.source.feature.group' name='EMF Edit Utils Feature Developer Resources' version='0.1.0.202202202207'>
+      <repositories size='1'>
+        <repository location='https://updatesite.mdsd.tools/library-emfeditutils/nightly/'/>
+      </repositories>
+    </iu>
+    <iu id='org.palladiosimulator.generator.fluent.feature.feature.group' name='FluentApiModelGeneratorFeature' version='5.1.0.202202210207'>
+      <repositories size='1'>
+        <repository location='https://updatesite.palladio-simulator.com/palladio-addons-fluentapimodelgenerator/nightly/'/>
+      </repositories>
+    </iu>
+    <iu id='org.palladiosimulator.generator.fluent.feature.source.feature.group' name='FluentApiModelGeneratorFeature Developer Resources' version='5.1.0.202202210207'>
+      <repositories size='1'>
+        <repository location='https://updatesite.palladio-simulator.com/palladio-addons-fluentapimodelgenerator/nightly/'/>
+      </repositories>
+    </iu>
+    <iu id='com.fasterxml.jackson.core.jackson-core' name='Jackson-core' version='2.12.1.v20210128-1726'>
+      <repositories size='5'>
+        <repository location='https://download.eclipse.org/tools/orbit/downloads/drops/R20210825222808/repository'/>
+        <repository location='https://download.eclipse.org/releases/latest'/>
+        <repository location='https://download.eclipse.org/releases/2021-09/'/>
+        <repository location='https://download.eclipse.org/releases/2021-06/'/>
+        <repository location='https://download.eclipse.org/releases/2021-12/'/>
+      </repositories>
+    </iu>
+    <iu id='com.fasterxml.jackson.core.jackson-core.source' name='Jackson-core Source' version='2.12.1.v20210128-1726'>
+      <repositories size='1'>
+        <repository location='https://download.eclipse.org/tools/orbit/downloads/drops/R20210825222808/repository'/>
+      </repositories>
+    </iu>
+    <iu id='com.fasterxml.jackson.core.jackson-databind' name='jackson-databind' version='2.12.1.v20210128-1726'>
+      <repositories size='5'>
+        <repository location='https://download.eclipse.org/tools/orbit/downloads/drops/R20210825222808/repository'/>
+        <repository location='https://download.eclipse.org/releases/latest'/>
+        <repository location='https://download.eclipse.org/releases/2021-09/'/>
+        <repository location='https://download.eclipse.org/releases/2021-06/'/>
+        <repository location='https://download.eclipse.org/releases/2021-12/'/>
+      </repositories>
+    </iu>
+    <iu id='com.fasterxml.jackson.core.jackson-databind.source' name='jackson-databind Source' version='2.12.1.v20210128-1726'>
+      <repositories size='1'>
+        <repository location='https://download.eclipse.org/tools/orbit/downloads/drops/R20210825222808/repository'/>
+      </repositories>
+    </iu>
+    <iu id='javax.activation' name='Jakarta Activation' version='2.0.0.v20201118-1818'>
+      <repositories size='1'>
+        <repository location='https://download.eclipse.org/tools/orbit/downloads/drops/R20210825222808/repository'/>
+      </repositories>
+    </iu>
+    <iu id='jakarta.activation' name='Jakarta Activation API jar' version='2.0.0.v20201118-1818'>
+      <repositories size='1'>
+        <repository location='https://download.eclipse.org/tools/orbit/downloads/drops/R20210825222808/repository'/>
+      </repositories>
+    </iu>
+    <iu id='jakarta.activation.source' name='Jakarta Activation API jar Source' version='2.0.0.v20201118-1818'>
+      <repositories size='1'>
+        <repository location='https://download.eclipse.org/tools/orbit/downloads/drops/R20210825222808/repository'/>
+      </repositories>
+    </iu>
+    <iu id='javax.activation.source' name='Jakarta Activation Source' version='2.0.0.v20201118-1818'>
+      <repositories size='1'>
+        <repository location='https://download.eclipse.org/tools/orbit/downloads/drops/R20210825222808/repository'/>
+      </repositories>
+    </iu>
+    <iu id='jakarta.xml.bind.source' name='Jakarta XML Binding API Source' version='2.3.3.v20201118-1818'>
+      <repositories size='1'>
+        <repository location='https://download.eclipse.org/tools/orbit/downloads/drops/R20210825222808/repository'/>
+      </repositories>
+    </iu>
+    <iu id='tools.mdsd.ecoreworkflow.mwe2lib.feature.feature.group' name='MDSD.tools EcoreWorkflow MWE2 Library' version='0.2.0.202202202210'>
+      <repositories size='1'>
+        <repository location='https://updatesite.mdsd.tools/ecore-workflow/nightly/'/>
+      </repositories>
+    </iu>
+    <iu id='tools.mdsd.ecoreworkflow.mwe2lib.feature.source.feature.group' name='MDSD.tools EcoreWorkflow MWE2 Library Developer Resources' version='0.2.0.202202202210'>
+      <repositories size='1'>
+        <repository location='https://updatesite.mdsd.tools/ecore-workflow/nightly/'/>
+      </repositories>
+    </iu>
+    <iu id='tools.mdsd.ecoreworkflow.mwe2lib.xtext.feature.feature.group' name='MDSD.tools EcoreWorkflow MWE2 Library for Xtext' version='0.1.1.202202202210'>
+      <repositories size='1'>
+        <repository location='https://updatesite.mdsd.tools/ecore-workflow/nightly/'/>
+      </repositories>
+    </iu>
+    <iu id='tools.mdsd.ecoreworkflow.mwe2lib.xtext.feature.source.feature.group' name='MDSD.tools EcoreWorkflow MWE2 Library for Xtext Developer Resources' version='0.1.1.202202202210'>
+      <repositories size='1'>
+        <repository location='https://updatesite.mdsd.tools/ecore-workflow/nightly/'/>
+      </repositories>
+    </iu>
+    <iu id='org.palladiosimulator.mdsdprofiles.feature.feature.group' name='MDSD Profiles' version='5.1.0.202202210147'>
+      <repositories size='2'>
+        <repository location='https://updatesite.palladio-simulator.com/fluidtrust/fluidtrust-build-updatesite/nightly/'/>
+        <repository location='https://updatesite.palladio-simulator.com/palladio-build-updatesite/nightly/'/>
+      </repositories>
+    </iu>
+    <iu id='org.palladiosimulator.mdsdprofiles.feature.source.feature.group' name='MDSD Profiles Developer Resources' version='5.1.0.202202210147'>
+      <repositories size='1'>
+        <repository location='https://updatesite.palladio-simulator.com/palladio-build-updatesite/nightly/'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.emf.mwe2.language.sdk.feature.group' name='MWE2 Language SDK' version='2.12.1.v20210218-2134'>
+      <repositories size='5'>
+        <repository location='https://download.eclipse.org/modeling/tmf/xtext/updates/composite/marketplace/'/>
+        <repository location='https://download.eclipse.org/releases/latest'/>
+        <repository location='https://download.eclipse.org/releases/2021-09/'/>
+        <repository location='https://download.eclipse.org/releases/2021-06/'/>
+        <repository location='https://download.eclipse.org/releases/2021-12/'/>
+      </repositories>
+    </iu>
+    <iu id='org.eclipse.emf.mwe2.runtime.sdk.feature.group' name='MWE2 Runtime SDK' version='2.12.1.v20210218-2134'>
+      <repositories size='5'>
+        <repository location='https://download.eclipse.org/modeling/tmf/xtext/updates/composite/marketplace/'/>
+        <repository location='https://download.eclipse.org/releases/latest'/>
+        <repository location='https://download.eclipse.org/releases/2021-09/'/>
+        <repository location='https://download.eclipse.org/releases/2021-06/'/>
+        <repository location='https://download.eclipse.org/releases/2021-12/'/>
+      </repositories>
+    </iu>
+    <iu id='org.glassfish.hk2.osgi-resource-locator' name='OSGi resource locator' version='2.5.0.v20161103-1916'>
+      <repositories size='1'>
+        <repository location='https://download.eclipse.org/tools/orbit/downloads/drops/R20210825222808/repository'/>
+      </repositories>
+    </iu>
+    <iu id='org.glassfish.hk2.osgi-resource-locator.source' name='OSGi resource locator Source' version='2.5.0.v20161103-1916'>
+      <repositories size='1'>
+        <repository location='https://download.eclipse.org/tools/orbit/downloads/drops/R20210825222808/repository'/>
+      </repositories>
+    </iu>
+    <iu id='org.palladiosimulator.analyzer.feature.feature.group' name='Palladio Analyzer Framework' version='5.1.0.202202210211'>
+      <repositories size='2'>
+        <repository location='https://updatesite.palladio-simulator.com/palladio-analyzer-framework/nightly/'/>
+        <repository location='https://updatesite.palladio-simulator.com/palladio-build-updatesite/nightly/'/>
+      </repositories>
+    </iu>
+    <iu id='org.palladiosimulator.analyzer.feature.source.feature.group' name='Palladio Analyzer Framework Developer Resources' version='5.1.0.202202210211'>
+      <repositories size='2'>
+        <repository location='https://updatesite.palladio-simulator.com/palladio-analyzer-framework/nightly/'/>
+        <repository location='https://updatesite.palladio-simulator.com/palladio-build-updatesite/nightly/'/>
+      </repositories>
+    </iu>
+    <iu id='org.palladiosimulator.pcm.feature.feature.group' name='Palladio Component Model' version='5.1.0.202202210158'>
+      <repositories size='2'>
+        <repository location='https://updatesite.palladio-simulator.com/fluidtrust/fluidtrust-build-updatesite/nightly/'/>
+        <repository location='https://updatesite.palladio-simulator.com/palladio-build-updatesite/nightly/'/>
+      </repositories>
+    </iu>
+    <iu id='org.palladiosimulator.editors.commons.feature.feature.group' name='Palladio Component Model - Commons for Editor Development' version='5.1.0.202202210207'>
+      <repositories size='2'>
+        <repository location='https://updatesite.palladio-simulator.com/fluidtrust/fluidtrust-build-updatesite/nightly/'/>
+        <repository location='https://updatesite.palladio-simulator.com/palladio-build-updatesite/nightly/'/>
+      </repositories>
+    </iu>
+    <iu id='org.palladiosimulator.editors.commons.feature.source.feature.group' name='Palladio Component Model - Commons for Editor Development Developer Resources' version='5.1.0.202202210207'>
+      <repositories size='1'>
+        <repository location='https://updatesite.palladio-simulator.com/palladio-build-updatesite/nightly/'/>
+      </repositories>
+    </iu>
+    <iu id='org.palladiosimulator.pcm.feature.source.feature.group' name='Palladio Component Model Developer Resources' version='5.1.0.202202210158'>
+      <repositories size='1'>
+        <repository location='https://updatesite.palladio-simulator.com/palladio-build-updatesite/nightly/'/>
+      </repositories>
+    </iu>
+    <iu id='org.palladiosimulator.editors.sirius.feature.feature.group' name='Palladio Component Model - Sirius Editors' version='5.1.0.202202210342'>
+      <repositories size='2'>
+        <repository location='https://updatesite.palladio-simulator.com/fluidtrust/fluidtrust-build-updatesite/nightly/'/>
+        <repository location='https://updatesite.palladio-simulator.com/palladio-build-updatesite/nightly/'/>
+      </repositories>
+    </iu>
+    <iu id='org.palladiosimulator.editors.tree.feature.feature.group' name='Palladio Component Model - Tree Editors' version='5.1.0.202202210220'>
+      <repositories size='1'>
+        <repository location='https://updatesite.palladio-simulator.com/palladio-build-updatesite/nightly/'/>
+      </repositories>
+    </iu>
+    <iu id='org.palladiosimulator.editors.tree.feature.source.feature.group' name='Palladio Component Model - Tree Editors Developer Resources' version='5.1.0.202202210220'>
+      <repositories size='1'>
+        <repository location='https://updatesite.palladio-simulator.com/palladio-build-updatesite/nightly/'/>
+      </repositories>
+    </iu>
+    <iu id='de.uka.ipd.sdq.workflow.feature.core.feature.group' name='Palladio Workflow Engine Core' version='5.1.0.202202210147'>
+      <repositories size='1'>
+        <repository location='https://updatesite.palladio-simulator.com/palladio-build-updatesite/nightly/'/>
+      </repositories>
+    </iu>
+    <iu id='de.uka.ipd.sdq.workflow.feature.core.source.feature.group' name='Palladio Workflow Engine Core Developer Resources' version='5.1.0.202202210147'>
+      <repositories size='1'>
+        <repository location='https://updatesite.palladio-simulator.com/palladio-build-updatesite/nightly/'/>
+      </repositories>
+    </iu>
+    <iu id='de.uka.ipd.sdq.workflow.feature.mdsd.feature.group' name='Palladio Workflow Engine MDSD' version='5.1.0.202202210147'>
+      <repositories size='1'>
+        <repository location='https://updatesite.palladio-simulator.com/palladio-build-updatesite/nightly/'/>
+      </repositories>
+    </iu>
+    <iu id='de.uka.ipd.sdq.workflow.feature.mdsd.source.feature.group' name='Palladio Workflow Engine MDSD Developer Resources' version='5.1.0.202202210147'>
+      <repositories size='1'>
+        <repository location='https://updatesite.palladio-simulator.com/palladio-build-updatesite/nightly/'/>
+      </repositories>
+    </iu>
+    <iu id='tools.mdsd.library.standalone.initialization.core.feature.feature.group' name='Standalone Initialization Core Feature' version='0.3.0.202202202207'>
+      <repositories size='1'>
+        <repository location='https://updatesite.mdsd.tools/library-standaloneinitialization/nightly/'/>
+      </repositories>
+    </iu>
+    <iu id='tools.mdsd.library.standalone.initialization.core.feature.source.feature.group' name='Standalone Initialization Core Feature Developer Resources' version='0.3.0.202202202207'>
+      <repositories size='1'>
+        <repository location='https://updatesite.mdsd.tools/library-standaloneinitialization/nightly/'/>
+      </repositories>
+    </iu>
+    <iu id='tools.mdsd.library.standalone.initialization.log4j.feature.feature.group' name='Standalone Initialization Log4j' version='0.3.0.202202202207'>
+      <repositories size='1'>
+        <repository location='https://updatesite.mdsd.tools/library-standaloneinitialization/nightly/'/>
+      </repositories>
+    </iu>
+    <iu id='tools.mdsd.library.standalone.initialization.log4j.feature.source.feature.group' name='Standalone Initialization Log4j Developer Resources' version='0.3.0.202202202207'>
+      <repositories size='1'>
+        <repository location='https://updatesite.mdsd.tools/library-standaloneinitialization/nightly/'/>
+      </repositories>
+    </iu>
+    <iu id='org.palladiosimulator.thirdpartywrapper.feature.feature.group' name='Third Party Wrapper' version='5.0.0.202202210148'>
+      <repositories size='1'>
+        <repository location='https://updatesite.palladio-simulator.com/palladio-build-updatesite/nightly/'/>
+      </repositories>
+    </iu>
+  </ius>
+</p2f>

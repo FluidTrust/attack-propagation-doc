@@ -7,7 +7,7 @@ Welcome to Palladio Attack Propagation's documentation!
 =======================================================
 **Attack Propagation**
 
-
+:
 
 .. note::
 	under active development
@@ -15,9 +15,8 @@ Welcome to Palladio Attack Propagation's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   Developer/index
    general/installation
-
+   Developer/index
    
 
 

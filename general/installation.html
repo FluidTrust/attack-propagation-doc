@@ -19,7 +19,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Dev" href="../Developer/test.html" /> 
+    <link rel="next" title="Usage" href="../Developer/index.html" />
+    <link rel="prev" title="Welcome to Palladio Attack Propagation’s documentation!" href="../index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -39,15 +40,18 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../Developer/index.html">Test</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#palladio-bench-attack-drop">Palladio-Bench (Attack Drop)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#manual-installation">Manual Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#installation-with-the-update-site">Installation with the Update Site</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#developer-installation">Developer Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#palladio-bench-attack-drop">Palladio-Bench (Attack Drop)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#manual-installation">Manual Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#code-generation-without-maven">Code Generation (without Maven)</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#update-site-installation">Update Site Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#recommended-developer-installation">Recommended Developer Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Developer/index.html">Usage</a></li>
 </ul>
 
         </div>
@@ -66,7 +70,7 @@
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
       <li>Installation</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/general/installation.md.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/general/installation.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -76,47 +80,15 @@
              
   <section id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h1>
-<p>We provide multiple installation methods of our attack propagation. Depending on the use case different variants are preferably. For user who only want to try or only use the attack propagation, we would recommend the <a class="reference internal" href="#bench"><span class="std std-ref">Bench</span></a>. It is the easiest way to get started. For more advanced users or potential developers, we would recommend a mixture of the <a class="reference internal" href="#manual-installation"><span class="std std-ref">manual Installation</span></a> and the <a class="reference internal" href="#updatesite-installation"><span class="std std-ref">update site</span></a> variant (also see sec. <a class="reference internal" href="#developer-installation"><span class="std std-ref">developer installation</span></a>).</p>
-<section id="palladio-bench-attack-drop">
-<span id="bench"></span><h2>Palladio-Bench (Attack Drop)<a class="headerlink" href="#palladio-bench-attack-drop" title="Permalink to this heading"></a></h2>
-<p>We created an Eclipse product, which can be used to start our analysis and view the models. It should be configured that it automatically opens a workspace with the necessary projects loaded.</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://updatesite.palladio-simulator.com/fluidtrust/palladio-bench-product-attackerpropagation/nightly/">Download</a> and unzip the version for your operating system</p>
-<ul>
-<li><p><strong>Attention:</strong> The MAC-Version might not work, because of MACOS security features. In that case <a class="reference external" href="https://sdqweb.ipd.kit.edu/wiki/PCM_Installation#Mac_OS_X">this</a> might help. If not, you can still use the update site or manually install the tooling, but you are required to solve the dependencies manually.</p></li>
-</ul>
-</li>
-<li><p>Start the application by executing the <em>PalladioBench</em> binary (not the eclipse one!)</p></li>
-<li><p>After the load screen you should see 3 Projects in the Modelviewer on the left side:</p>
-<ul>
-<li><p>edu.kit.ipd.sdq.kamp4attack.tests</p></li>
-<li><p>org.palladiosimulator.pcm.confidentiality.context.analysis.testframework</p></li>
-<li><p>org.palladiosimulator.pcm.confidentiality.context.analysis.testmodels</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="manual-installation">
-<span id="id1"></span><h2>Manual Installation<a class="headerlink" href="#manual-installation" title="Permalink to this heading"></a></h2>
-<p>Please make sure, that you have the <a class="reference internal" href="#dependencies"><span class="std std-ref">dependencies</span></a> installed.</p>
-</section>
-<section id="installation-with-the-update-site">
-<span id="updatesite-installation"></span><h2>Installation with the Update Site<a class="headerlink" href="#installation-with-the-update-site" title="Permalink to this heading"></a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* Context and Attackermetamodel ([Updatesite](https://updatesite.palladio-simulator.com/fluidtrust/palladio-addons-contextconfidentiality-metamodel/nightly/), [Repo](https://github.com/FluidTrust/Palladio-Addons-ContextConfidentiality-Metamodel))
-</pre></div>
-</div>
-</section>
-<section id="developer-installation">
-<span id="id2"></span><h2>Developer Installation<a class="headerlink" href="#developer-installation" title="Permalink to this heading"></a></h2>
-</section>
+<p>We provide multiple installation methods of our attack propagation. Depending on the use case different variants are preferably. For user who only want to try or only use the attack propagation, we would recommend the <a class="reference internal" href="#bench"><span class="std std-ref">Palladio-Bench (Attack Drop)</span></a>. It is the easiest way to get started. For more advanced users or potential developers, we would recommend a mixture of the <a class="reference internal" href="#manual-installation"><span class="std std-ref">Manual Installation</span></a> and the <a class="reference internal" href="#update-site-installation"><span class="std std-ref">Update Site Installation</span></a> variant (also see sec. <a class="reference internal" href="#dev-install"><span class="std std-ref">Recommended Developer Installation</span></a>).</p>
 <section id="dependencies">
-<span id="id3"></span><h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this heading"></a></h2>
-<p>For the execution of our attack propagation analysis the following dependencies are necessary:</p>
-<ul>
-<li><p>Java 17</p></li>
-<li><p>Eclipse Modelling Edition (min. 2021-12) with</p>
+<span id="id1"></span><h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this heading"></a></h2>
+<p>Our attack propagation analysis is realized as Eclipse Plugins. The analysis source code is compiled with <em>Java 17</em> as Target. Therefore, we recommend using a <em>Java 17</em> environment for execution. Newer versions might work, but we have not tested them. Older versions especially <em>Java 11</em> or <em>Java 8</em> are not supported.  If you only want to use the metamodel, you also can use Java 11.</p>
+<p>If not our <a class="reference internal" href="#palladio-bench-attack-drop">Palladio-Bench (Attack Drop)</a> is used, our tooling requires an <a class="reference external" href="https://www.eclipse.org/downloads/packages/release/2021-12/r/eclipse-modeling-tools">Eclipse Modelling Edition</a> (min. 2021-12) with the following dependencies:</p>
 <ul class="simple">
-<li><p>PCM 5.1+</p></li>
+<li><p><a class="reference external" href="https://sdqweb.ipd.kit.edu/wiki/PCM_Installation">PCM 5.1+</a></p></li>
+<li><p><a class="reference external" href="https://github.com/MDSD-Tools/Library-EMFEditUtils">tools.mdsd.library.emfeditutils</a></p></li>
+<li><p><a class="reference external" href="https://github.com/MDSD-Tools/Library-StandaloneInitialization">tools.mdsd.library.standalone.initialization</a></p></li>
 <li><p>com.google.gson</p></li>
 <li><p>com.google.guava</p></li>
 <li><p>org.apache.commons.codec</p></li>
@@ -127,9 +99,61 @@
 <li><p>jakarta.activation version=”1.2.2”</p></li>
 <li><p>org.apache.logging.log4j version=”2.8.2”</p></li>
 </ul>
-<p>(the ones without a link are available from <a class="reference external" href="https://download.eclipse.org/tools/orbit/downloads/drops/R20210602031627/">Eclipse Orbit</a>)</p>
+<p>The eclipse dependencies without a link are available from <a class="reference external" href="https://download.eclipse.org/tools/orbit/downloads/drops/R20210602031627/">Eclipse Orbit</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We provide an Eclipse installation file. The file assumes that the Eclipse Modelling Tools are already installed. After downloading the file you can install it in Eclipse via File-&gt;Import-&gt;Install-&gt;Install Software Items from File and then selecting the installation file. <a class="reference download internal" download="" href="../_downloads/91a431b5786405a5c4e08fec18496c45/dependencies.p2f"><code class="xref download docutils literal notranslate"><span class="pre">Install-File</span></code></a>.</p>
+</div>
+</section>
+<section id="palladio-bench-attack-drop">
+<span id="bench"></span><h2>Palladio-Bench (Attack Drop)<a class="headerlink" href="#palladio-bench-attack-drop" title="Permalink to this heading"></a></h2>
+<p>We created an Eclipse product, which can be used to start our analysis and view the models. It should be configured that it automatically opens a workspace with the necessary projects loaded.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://updatesite.palladio-simulator.com/fluidtrust/palladio-bench-product-attackerpropagation/nightly/">Download</a> and unzip the version for your operating system</p></li>
+<li><p>Start the application by executing the <em>PalladioBench</em> binary (not the eclipse one!)</p></li>
+<li><dl class="simple">
+<dt>After the load screen you should see 3 Projects in the Modelviewer on the left side:</dt><dd><ul>
+<li><p>edu.kit.ipd.sdq.kamp4attack.tests</p></li>
+<li><p>org.palladiosimulator.pcm.confidentiality.context.analysis.testframework</p></li>
+<li><p>org.palladiosimulator.pcm.confidentiality.context.analysis.testmodels</p></li>
+</ul>
+</dd>
+</dl>
 </li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The MAC-Version might not work, because of MACOS security features. In that case <a class="reference external" href="https://sdqweb.ipd.kit.edu/wiki/PCM_Installation#Mac_OS_X">this</a> might help. If not, you can still use the update site or manually install the tooling, but you are required to solve the dependencies manually.</p>
+</div>
+</section>
+<section id="manual-installation">
+<span id="id2"></span><h2>Manual Installation<a class="headerlink" href="#manual-installation" title="Permalink to this heading"></a></h2>
+<p>Please make sure that you have installed the <a class="reference internal" href="#dependencies">Dependencies</a>. Clone the <a class="reference external" href="https://github.com/FluidTrust/Palladio-Addons-ContextConfidentiality-Metamodel">metamodel</a> and <a class="reference external" href="https://github.com/FluidTrust/Palladio-Addons-ContextConfidentiality-Analysis">analysis</a> repositories. The repositories do not contain the source code for the stored metamodels. The easiest solution to create the source code is to build each repository with maven for instance with <code class="docutils literal notranslate"><span class="pre">mvn</span> <span class="pre">clean</span> <span class="pre">verify</span></code>. If there is no maven available see <a class="reference internal" href="#code-generation"><span class="std std-ref">Code Generation (without Maven)</span></a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The metamodel must be built with Java 11 and the analysis with Java 17.</p>
+</div>
+<p>After downloading the source code. The necessary plugins for applying the projects are in each repository in the <em>bundle</em> folder. All folder in this folder contain plugin projects and must be imported into the eclipse workspace. After importing the projects, a inner eclipse application can be started, where the attack propagation is installed.</p>
+<section id="code-generation-without-maven">
+<span id="code-generation"></span><h3>Code Generation (without Maven)<a class="headerlink" href="#code-generation-without-maven" title="Permalink to this heading"></a></h3>
+<p>TBD</p>
+</section>
+</section>
+<section id="update-site-installation">
+<span id="id3"></span><h2>Update Site Installation<a class="headerlink" href="#update-site-installation" title="Permalink to this heading"></a></h2>
+<p>We provide also two Eclipse update site for our attack propagation. The eclipse installation needs to have the <a class="reference internal" href="#dependencies"><span class="std std-ref">Dependencies</span></a> installed. After installing the dependencies, our attack propagation analysis can be installed. First add and install our <a class="reference external" href="https://updatesite.palladio-simulator.com/fluidtrust/palladio-addons-contextconfidentiality-metamodel/nightly/">metamodel</a>. Afterwards, our <a class="reference external" href="https://updatesite.palladio-simulator.com/fluidtrust/palladio-addons-contextconfidentiality-analysis/nightly/">analysis</a> can be installed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We also provide a complete Eclipse installation file. Using this installation file, it is not necessary to install the dependencies before, since they are bundled within. The file assumes that the Eclipse Modelling Tools are already installed. After downloading the file you can install it in Eclipse via File-&gt;Import-&gt;Install-&gt;Install Software Items from File and then selecting the installation file. <a class="reference download internal" download="" href="../_downloads/03fc2a2bcc1abc6e7bf96fcb0fc8ed07/full-installation.p2f"><code class="xref download docutils literal notranslate"><span class="pre">Install-File</span></code></a>.</p>
+</div>
+</section>
+<section id="recommended-developer-installation">
+<span id="dev-install"></span><h2>Recommended Developer Installation<a class="headerlink" href="#recommended-developer-installation" title="Permalink to this heading"></a></h2>
+<p>For developers, we recommend a mixture between the <a class="reference internal" href="#update-site-installation"><span class="std std-ref">Update Site Installation</span></a> and <a class="reference internal" href="#manual-installation"><span class="std std-ref">Manual Installation</span></a>. Install first the tooling via the update sites (preferably with the installation file) afterwards only import the necessary plugins, for the development step. Eclipse should then automatically choose the correct dependencies for the inner instance. Usually the projects in the workspace are prefered over installed file. However, this can be configured in the launch config.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Palladio models use the CDO-Framework. For easier debugging it is useful to install the <a class="reference external" href="https://github.com/MDSD-Tools/EclipseAddon-CDODebugUtils">CDODebugUtil</a>. It will automatically reorder the layout in the debug view to see the relevant properties.</p>
+</div>
 </section>
 </section>
 
@@ -137,7 +161,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../Developer/test.html" class="btn btn-neutral float-left" title="Dev" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="Welcome to Palladio Attack Propagation’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Developer/index.html" class="btn btn-neutral float-right" title="Usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
