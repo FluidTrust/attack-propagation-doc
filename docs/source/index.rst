@@ -31,7 +31,8 @@ This contains the documentation for multiple Eclipse plugins to analyze confiden
    :caption: Contents:
 
    general/installation
-   Developer/index
+   usage/index
+   developer/index
    
 
 
@@ -40,7 +41,6 @@ Indices and tables
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
 
 
