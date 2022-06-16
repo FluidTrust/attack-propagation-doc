@@ -1,4 +1,6 @@
-Test
-====
+Foundation
+==========
 
-:external:test:foundation
+.. :external:doc:`foundations/palladio`
+
+:doc:`test:foundations/palladio` 
