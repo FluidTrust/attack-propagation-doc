@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Developer Documentation &mdash; Palladio Attack Propagation 1.0.0 documentation</title>
+  <title>Maintenance Scenario (Running Example) &mdash; Palladio Attack Propagation 1.0.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Attack Propagation Analysis" href="AttackPropagationAnalysis.html" />
-    <link rel="prev" title="Analysing Attack Propagations" href="../usage/analysis_attack_propagation.html" /> 
+    <link rel="next" title="User Documentation" href="../usage/index.html" />
+    <link rel="prev" title="Application Scenarios" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -41,12 +41,16 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../general/installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../application_scenarios/index.html">Application Scenarios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../usage/index.html">User Documentation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Developer Documentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="AttackPropagationAnalysis.html">Attack Propagation Analysis</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Application Scenarios</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Maintenance Scenario (Running Example)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#background-setting">Background Setting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#architectural-model">Architectural Model</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/index.html">User Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/index.html">Developer Documentation</a></li>
 </ul>
 
         </div>
@@ -63,9 +67,10 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Developer Documentation</li>
+          <li><a href="index.html">Application Scenarios</a> &raquo;</li>
+      <li>Maintenance Scenario (Running Example)</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/FluidTrust/tutorial-ecsa2021-tooldoc/blob/main/source/developer/index.md" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/FluidTrust/tutorial-ecsa2021-tooldoc/blob/main/source/application_scenarios/industry_maintenance.md" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -73,23 +78,23 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="developer-documentation">
-<h1>Developer Documentation<a class="headerlink" href="#developer-documentation" title="Permalink to this heading"></a></h1>
-<p><span id="id1">[<a class="reference internal" href="../index.html#id4" title="Ralf H. Reussner, Steffen Becker, Jens Happe, Robert Heinrich, Anne Koziolek, Heiko Koziolek, Max Kramer, and Klaus Krogmann. Modeling and Simulating Software Architectures – The Palladio Approach. MIT Press, Cambridge, MA, October 2016. ISBN 9780262034760. URL: http://mitpress.mit.edu/books/modeling-and-simulating-software-architectures.">RBH+16</a>]</span></p>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Episodes</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="AttackPropagationAnalysis.html">Attack Propagation Analysis</a></li>
-</ul>
-</div>
+  <section id="maintenance-scenario-running-example">
+<h1>Maintenance Scenario (Running Example)<a class="headerlink" href="#maintenance-scenario-running-example" title="Permalink to this heading"></a></h1>
+<section id="background-setting">
+<h2>Background Setting<a class="headerlink" href="#background-setting" title="Permalink to this heading"></a></h2>
+<p>This scenario is settled in an Industry 4.0 environment. It is based on a previous publication <span id="id1">[<a class="reference internal" href="../index.html#id5" title="Rima Al-Ali, Robert Heinrich, Petr Hnetynka, Adrian Juan-Verdejo, Stephan Seifermann, and Maximilian Walter. Modeling of dynamic trust contracts for industry 4.0 systems. In 12th European Conference on Software Architecture: Companion Proceedings (ECSA '18), September 24–28, 2018, Madrid, Spain. ACM, 2018. URL: https://publikationen.bibliothek.kit.edu/1000087072, doi:10.1145/3241403.3241450.">AAHH+18</a>]</span>. It consists of two companies. The first company produces goods by using a machine. The machine creates log data and safely stores them for maintenance reasons. The second company is a service contractor, which maintains and repairs the machine from the first company. However, the service contractor should only have access to the machine’s log data in case of a machine failure. In other cases, the access should be denied. Additionally, the network contains further components used for storing confidential information, but they are not directly relevant for the operation of the machine.</p>
+</section>
+<section id="architectural-model">
+<h2>Architectural Model<a class="headerlink" href="#architectural-model" title="Permalink to this heading"></a></h2>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../usage/analysis_attack_propagation.html" class="btn btn-neutral float-left" title="Analysing Attack Propagations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="AttackPropagationAnalysis.html" class="btn btn-neutral float-right" title="Attack Propagation Analysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Application Scenarios" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../usage/index.html" class="btn btn-neutral float-right" title="User Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
