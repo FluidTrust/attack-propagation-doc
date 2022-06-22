@@ -1,2 +1,2 @@
-Modeling Attackers & vulnerabilities
+Modeling Attackers & Vulnerabilities
 ====================================

@@ -33,8 +33,12 @@ release = '1.0.0'
 extensions = [
     'sphinxcontrib.bibtex',
     'sphinx.ext.intersphinx',
+    'sphinx.ext.autosectionlabel',
     'myst_parser'
 ]
+
+
+autosectionlabel_prefix_document = True
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -81,3 +85,8 @@ html_context = {
   'github_version': 'main',
   'conf_py_path': '/source/'
 }
+
+myst_enable_extensions = [
+  'html_image',
+  'colon_fence'
+]
