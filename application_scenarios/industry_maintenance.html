@@ -44,7 +44,18 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Application Scenarios</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Maintenance Scenario (Running Example)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#background-setting">Background Setting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#architectural-model">Architectural Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#architectural-model">Architectural Model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#repository-model">Repository-Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#assembly-model">Assembly-Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#resourceenvironment-model">ResourceEnvironment-Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#allocation-model">Allocation-Model</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#access-control">Access Control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#attack-propagation">Attack Propagation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#expected-output">Expected Output</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -86,6 +97,66 @@
 </section>
 <section id="architectural-model">
 <h2>Architectural Model<a class="headerlink" href="#architectural-model" title="Permalink to this heading"></a></h2>
+<section id="repository-model">
+<h3>Repository-Model<a class="headerlink" href="#repository-model" title="Permalink to this heading"></a></h3>
+<figure class="align-default" id="repositorymaintenance">
+<a class="reference internal image-reference" href="../_images/RepositoryDiagram.svg"><img alt="repositoryModel" src="../_images/RepositoryDiagram.svg" width="750px" /></a>
+<figcaption>
+<p><span class="caption-text">Overview of the repository</span><a class="headerlink" href="#repositorymaintenance" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The repository model contains 4 components and 3 interfaces. The <em>TerminalComponent</em> represents the terminal for the technician to access the machine. This access is represented by the access service. The <em>MachineComponent</em> represents the machine. It provides services for storing and accessing data representing the log data. The <em>ProductionStorageComponent</em> represents a storage component for storing log data and *ProductStorage represents the component storing other confidential data.</p>
+</section>
+<section id="assembly-model">
+<h3>Assembly-Model<a class="headerlink" href="#assembly-model" title="Permalink to this heading"></a></h3>
+<figure class="align-default" id="assemblymaintenance">
+<a class="reference internal image-reference" href="../_images/newAssemblyDiagram.svg"><img alt="test" src="../_images/newAssemblyDiagram.svg" width="750px" /></a>
+<figcaption>
+<p><span class="caption-text">Overview of the Assembly (System)</span><a class="headerlink" href="#assemblymaintenance" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The system diagram consist of 4 instantiated components. The instantiated Terminal is connected with the Machine, which is connected with the ProductionStorage. The ProductStorage is not directly connected to the other components.</p>
+</section>
+<section id="resourceenvironment-model">
+<h3>ResourceEnvironment-Model<a class="headerlink" href="#resourceenvironment-model" title="Permalink to this heading"></a></h3>
+<figure class="align-default" id="resourcemaintenance">
+<a class="reference internal image-reference" href="../_images/ResourceEnvironmentDiagram.svg"><img alt="test" src="../_images/ResourceEnvironmentDiagram.svg" width="750px" /></a>
+<figcaption>
+<p><span class="caption-text">Overview of the repository</span><a class="headerlink" href="#resourcemaintenance" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The resource environment consists of 3 hardware devices (<em>StorageServer</em>, <em>TerminalServer</em>, <em>MachineController</em>). They are connected by the network device <em>ProductionNetwork</em>.</p>
+</section>
+<section id="allocation-model">
+<h3>Allocation-Model<a class="headerlink" href="#allocation-model" title="Permalink to this heading"></a></h3>
+<figure class="align-default" id="allocationmaintenance">
+<a class="reference internal image-reference" href="../_images/maintenanceAllocation.svg"><img alt="test" src="../_images/maintenanceAllocation.svg" width="750px" /></a>
+<figcaption>
+<p><span class="caption-text">Overview of the repository</span><a class="headerlink" href="#allocationmaintenance" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The allocation model stores the deployment of the components on the hardware resources. Here importantly, the <em>StorageServer</em> has allocated both storage components.</p>
+</section>
+</section>
+<section id="access-control">
+<h2>Access Control<a class="headerlink" href="#access-control" title="Permalink to this heading"></a></h2>
+</section>
+<section id="attack-propagation">
+<h2>Attack Propagation<a class="headerlink" href="#attack-propagation" title="Permalink to this heading"></a></h2>
+<p>We added the vulnerability <em>CVE-2021-28374</em> to the <em>TerminalServer</em>. In our case the vulnerability will leak the <em>Admin</em> credential and can be exploited from every device. The attacker has the ability to exploit <em>CWE-312</em> and the starting point of the attacker is the <em>TerminalComponent</em>.</p>
+<section id="expected-output">
+<h3>Expected Output<a class="headerlink" href="#expected-output" title="Permalink to this heading"></a></h3>
+<p>The expected output is an attack path from the <em>TerminalComponent</em> to the storage components. The attacker should exploit the vulnerability of the <em>TerminalServer</em> and gain there the <em>Admin</em> credential. These credential should then be used to propagate further.
+The concrete compromised elements should be:</p>
+<ul class="simple">
+<li><p><em>Assembly_TerminalComponent</em> (as starting point)</p></li>
+<li><p><em>TerminalServer</em></p></li>
+<li><p><em>StorageServer</em></p></li>
+<li><p><em>Assembly_ProductionStorageComponent</em></p></li>
+<li><p><em>Assembly_ProductStorage</em></p></li>
+</ul>
+<p>Additionally, all the services of the components and the data elements are compromised.</p>
+</section>
 </section>
 </section>
 
