@@ -9,7 +9,9 @@ We provide multiple installation methods of our attack propagation. Depending on
 Dependencies
 ************
 
-Our attack propagation analysis is realized as Eclipse Plugins. The analysis source code is compiled with *Java 17* as Target. Therefore, we recommend using a *Java 17* environment for execution. Newer versions might work, but we have not tested them. Older versions especially *Java 11* or *Java 8* are not supported.  If you only want to use the metamodel, you also can use Java 11.
+Our attack propagation analysis is realized as Eclipse Plugins. The analysis source code is compiled with *Java 17* as Target. Therefore, we recommend using a *Java 17* environment for execution. Newer versions might work, but we have not tested them. Older versions especially *Java 11* or *Java 8* are not supported.  
+.. note::
+    If you only want to use the metamodel, you also can use Java 11. However you have to use the Java11 Branch and manually install it.
 
 If not our `Palladio-Bench (Attack Drop)`_ is used, our tooling requires an `Eclipse Modelling Edition <https://www.eclipse.org/downloads/packages/release/2021-12/r/eclipse-modeling-tools>`__ (min. 2021-12) with the following dependencies:
 
@@ -54,9 +56,6 @@ We created an Eclipse product, which can be used to start our analysis and view 
 Manual Installation
 *******************
 Please make sure that you have installed the `Dependencies`_. Clone the `metamodel <https://github.com/FluidTrust/Palladio-Addons-ContextConfidentiality-Metamodel>`__ and `analysis <https://github.com/FluidTrust/Palladio-Addons-ContextConfidentiality-Analysis>`__ repositories. The repositories do not contain the source code for the stored metamodels. The easiest solution to create the source code is to build each repository with maven for instance with ``mvn clean verify``. If there is no maven available see :ref:`code-generation`.
-
-.. warning::
-    The metamodel must be built with Java 11 and the analysis with Java 17.
 
 After downloading the source code. The necessary plugins for applying the projects are in each repository in the *bundle* folder. All folder in this folder contain plugin projects and must be imported into the eclipse workspace. After importing the projects, a inner eclipse application can be started, where the attack propagation is installed. 
 
