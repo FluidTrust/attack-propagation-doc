@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Palladio Attack Propagation'
-copyright = '2022, Maximilian Walter'
+copyright = '2022, Dependability of Software-intensive Systems (DSiS) group, Institute of Information Security and Dependability (KASTEL), Karlsruhe Institute of Technology (KIT)'
 author = 'Maximilian Walter'
 
 # The full version, including alpha/beta/rc tags
