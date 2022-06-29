@@ -2,8 +2,6 @@
 
 
 
-{cite:p}`reussner2016a`
-
 ```{toctree}
 ---
 caption: Episodes

@@ -81,7 +81,7 @@
           <li><a href="index.html">Application Scenarios</a> &raquo;</li>
       <li>Maintenance Scenario (Running Example)</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/FluidTrust/attack-propagation-doc/blob/main/source/application_scenarios/industry_maintenance.md" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/FluidTrust/attack-propagation-doc/blob/main/docs/source/application_scenarios/industry_maintenance.md" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -100,7 +100,7 @@
 <section id="repository-model">
 <h3>Repository-Model<a class="headerlink" href="#repository-model" title="Permalink to this heading"></a></h3>
 <figure class="align-default" id="repositorymaintenance">
-<a class="reference internal image-reference" href="../_images/RepositoryDiagram.svg"><img alt="repositoryModel" src="../_images/RepositoryDiagram.svg" width="750px" /></a>
+<a class="reference internal image-reference" href="../_images/RepositoryDiagram.svg"><img alt="repository model" src="../_images/RepositoryDiagram.svg" width="750px" /></a>
 <figcaption>
 <p><span class="caption-text">Overview of the repository</span><a class="headerlink" href="#repositorymaintenance" title="Permalink to this image"></a></p>
 </figcaption>
@@ -110,7 +110,7 @@
 <section id="assembly-model">
 <h3>Assembly-Model<a class="headerlink" href="#assembly-model" title="Permalink to this heading"></a></h3>
 <figure class="align-default" id="assemblymaintenance">
-<a class="reference internal image-reference" href="../_images/newAssemblyDiagram.svg"><img alt="test" src="../_images/newAssemblyDiagram.svg" width="750px" /></a>
+<a class="reference internal image-reference" href="../_images/newAssemblyDiagram.svg"><img alt="system diagram" src="../_images/newAssemblyDiagram.svg" width="750px" /></a>
 <figcaption>
 <p><span class="caption-text">Overview of the Assembly (System)</span><a class="headerlink" href="#assemblymaintenance" title="Permalink to this image"></a></p>
 </figcaption>
@@ -120,7 +120,7 @@
 <section id="resourceenvironment-model">
 <h3>ResourceEnvironment-Model<a class="headerlink" href="#resourceenvironment-model" title="Permalink to this heading"></a></h3>
 <figure class="align-default" id="resourcemaintenance">
-<a class="reference internal image-reference" href="../_images/ResourceEnvironmentDiagram.svg"><img alt="test" src="../_images/ResourceEnvironmentDiagram.svg" width="750px" /></a>
+<a class="reference internal image-reference" href="../_images/ResourceEnvironmentDiagram.svg"><img alt="resource environment diagram" src="../_images/ResourceEnvironmentDiagram.svg" width="750px" /></a>
 <figcaption>
 <p><span class="caption-text">Overview of the repository</span><a class="headerlink" href="#resourcemaintenance" title="Permalink to this image"></a></p>
 </figcaption>
@@ -130,7 +130,7 @@
 <section id="allocation-model">
 <h3>Allocation-Model<a class="headerlink" href="#allocation-model" title="Permalink to this heading"></a></h3>
 <figure class="align-default" id="allocationmaintenance">
-<a class="reference internal image-reference" href="../_images/maintenanceAllocation.svg"><img alt="test" src="../_images/maintenanceAllocation.svg" width="750px" /></a>
+<a class="reference internal image-reference" href="../_images/maintenanceAllocation.svg"><img alt="allocation diagram" src="../_images/maintenanceAllocation.svg" width="750px" /></a>
 <figcaption>
 <p><span class="caption-text">Overview of the repository</span><a class="headerlink" href="#allocationmaintenance" title="Permalink to this image"></a></p>
 </figcaption>
@@ -140,6 +140,7 @@
 </section>
 <section id="access-control">
 <h2>Access Control<a class="headerlink" href="#access-control" title="Permalink to this heading"></a></h2>
+<p>Our model contains an access control poliy, which grants the Admin access to the <em>TerminalServer</em> and <em>StorageServer</em>. The <em>access</em> service from the <em>TerminalComponent</em> and <em>MachineComponent</em> have the rule that a <em>Technican</em> can access them in a <em>failure</em> state. All services from the <em>ProductionStorageComponent</em> can be accessed by the machine and all services from the <em>ProductStorageComponent</em> are only accessible by a <em>ProductDeveloper</em>.</p>
 </section>
 <section id="attack-propagation">
 <h2>Attack Propagation<a class="headerlink" href="#attack-propagation" title="Permalink to this heading"></a></h2>

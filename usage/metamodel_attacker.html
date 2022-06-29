@@ -45,7 +45,12 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">User Documentation</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="palladio.html">Palladio</a></li>
 <li class="toctree-l2"><a class="reference internal" href="metamodel_access_control.html">Modelling Access Control Properties</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Modeling Attackers &amp; Vulnerabilities</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Modeling Attackers &amp; Vulnerabilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#attacker-specification">Attacker Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Attack Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vulnerability-container">Vulnerability Container</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="analysis_attack_propagation.html">Analyzing Attack Propagations</a></li>
 </ul>
 </li>
@@ -69,7 +74,7 @@
           <li><a href="index.html">User Documentation</a> &raquo;</li>
       <li>Modeling Attackers &amp; Vulnerabilities</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/FluidTrust/attack-propagation-doc/blob/main/source/usage/metamodel_attacker.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/FluidTrust/attack-propagation-doc/blob/main/docs/source/usage/metamodel_attacker.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -79,6 +84,24 @@
              
   <section id="modeling-attackers-vulnerabilities">
 <h1>Modeling Attackers &amp; Vulnerabilities<a class="headerlink" href="#modeling-attackers-vulnerabilities" title="Permalink to this heading"></a></h1>
+<p>The attackers and vulnerabilities are modelled in the attack model. It contains the attacker, the attack specification, the vulnerability specification, the attack category specification and the integration into PCM.</p>
+<section id="attacker-specification">
+<h2>Attacker Specification<a class="headerlink" href="#attacker-specification" title="Permalink to this heading"></a></h2>
+<p>The attacker is specified in the <em>Container</em> element of the <em>Specification</em>.</p>
+<a class="reference internal image-reference" href="../_images/attackSpecification.png"><img alt="attacker specification Attacker Specification" src="../_images/attackSpecification.png" style="width: 600px;" /></a>
+<p>In the properties section, the attacker properties can be specified. In the <em>Attacks</em> section the attacks of the attacker can be selected. The start position of the propagation is defined by the <em>Compromised Components</em> or <em>Compromised Resource Elements</em>. These can be created as children of the attacker. Children can be added by a right click on the element.</p>
+<p>In the <em>Credentials</em> section the initial credentials can be selected. Credentials are the attributes of the access control system. In our case these are <em>UsageSpecifications</em>. These are modelled in the <a class="reference internal" href="metamodel_access_control.html"><span class="doc">context</span></a> model. The attacker can also have optionally a name, stored in <em>Entity Name</em>. <em>Exploit Context Providers</em> is always true. This is for a potential extension later on. Additionally, every attacker has a unique <em>ID</em>.</p>
+</section>
+<section id="id1">
+<h2>Attack Specification<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<p>In the attack container the attacks are specified. These are later referenced in the attacker. This allows to create a repository of potential attacks, which are then selected in the attacker. All attacks consist of a <em>Category</em>, <em>Entity Name</em>, and <em>ID</em>. Based on the <em>Category</em> we differ between two types of attacks. The <em>CWE Attack</em> and the <em>CVE Attack</em>.</p>
+<p>The first one is based on <a class="reference external" href="https://cwe.mitre.org/">CWEs</a> and symbolize general attacks. For instance, in the <a class="reference internal" href="../application_scenarios/industry_maintenance.html"><span class="doc">Maintenance Scenario (Running Example)</span></a>, we use the <a class="reference external" href="https://cwe.mitre.org/data/definitions/312.html">CWE 312</a>. This enables attacker to exploit all vulnerabilities with the corresponding CWE class. Since CWEs are hierarchically organized, also all child elements are affected.</p>
+<p>The other type of attack is the <em>CVE Attack</em>. It is based on the <a class="reference external" href="https://cve.mitre.org/">CVE</a> concept and symbolize concrete attacks. The main difference to the <em>CWE Attacks</em> are that this attack can only exploit the corresponding CVE. A CWE attack could exploit all CVEs belonging to its CWE including its children CWEs.</p>
+</section>
+<section id="vulnerability-container">
+<h2>Vulnerability Container<a class="headerlink" href="#vulnerability-container" title="Permalink to this heading"></a></h2>
+<p>In the vulnerability container the actual vulnerabilities are specified. Like with the <a class="reference internal" href="#attack-specification"><span class="std std-ref">attacks</span></a>, we differ between <em>CVE Vulnerability</em> and <em>CWE Vulnerability</em>.</p>
+</section>
 </section>
 
 
