@@ -13,7 +13,7 @@ This scenario is settled in an Industry 4.0 environment. It is based on a previo
 
 :::{figure-md} repositoryMaintenance
 
-<img src="/_static/images/case_study/maintenance/RepositoryDiagram.svg" alt="repositoryModel" width="750px"/>
+<img src="/_static/images/case_study/maintenance/RepositoryDiagram.svg" alt="repository model" width="750px"/>
 
 Overview of the repository
 :::
@@ -25,7 +25,7 @@ The repository model contains 4 components and 3 interfaces. The *TerminalCompon
 
 :::{figure-md} assemblyMaintenance
 
-<img src="/_static/images/case_study/maintenance/newAssemblyDiagram.svg" alt="test" width="750px"/>
+<img src="/_static/images/case_study/maintenance/newAssemblyDiagram.svg" alt="system diagram" width="750px"/>
 
 Overview of the Assembly (System)
 :::
@@ -39,7 +39,7 @@ The system diagram consist of 4 instantiated components. The instantiated Termin
 
 :::{figure-md} resourceMaintenance
 
-<img src="/_static/images/case_study/maintenance/ResourceEnvironmentDiagram.svg" alt="test" width="750px"/>
+<img src="/_static/images/case_study/maintenance/ResourceEnvironmentDiagram.svg" alt="resource environment diagram" width="750px"/>
 
 Overview of the repository
 :::
@@ -53,7 +53,7 @@ The resource environment consists of 3 hardware devices (*StorageServer*, *Termi
 
 :::{figure-md} allocationMaintenance
 
-<img src="/_static/images/case_study/maintenance/maintenanceAllocation.svg" alt="test" width="750px"/>
+<img src="/_static/images/case_study/maintenance/maintenanceAllocation.svg" alt="allocation diagram" width="750px"/>
 
 Overview of the repository
 :::
@@ -64,6 +64,8 @@ The allocation model stores the deployment of the components on the hardware res
 
 
 ## Access Control
+
+Our model contains an access control poliy, which grants the Admin access to the *TerminalServer* and *StorageServer*. The *access* service from the *TerminalComponent* and *MachineComponent* have the rule that a *Technican* can access them in a *failure* state. All services from the *ProductionStorageComponent* can be accessed by the machine and all services from the *ProductStorageComponent* are only accessible by a *ProductDeveloper*.
 
 ## Attack Propagation
 

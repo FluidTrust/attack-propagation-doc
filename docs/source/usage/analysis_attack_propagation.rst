@@ -33,13 +33,13 @@ The analysis can be configured to create besides the EMF output model also an im
 
 
 .. note::
-	The graph creation uses internally ::ref::`Graphviz <https://graphviz.org/>`. Please make sure to add the Graphiz binary to the path variable of the Java environment.
+	The graph creation uses internally `Graphviz <https://graphviz.org/>`_. Please make sure to add the Graphiz binary to the path variable of the Java environment.
 
 
 Analysis Results
 ++++++++++++++++
 
-There are two results files for the attack propagation possible. The first is the modification mark model and the attack graph image
+There are two results files for the attack propagation possible. The first is the modification mark model and the second the attack graph image
 
 Modification Mark Model
 ######################

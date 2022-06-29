@@ -83,7 +83,7 @@ html_context = {
   'github_user': 'FluidTrust',
   'github_repo': 'attack-propagation-doc',
   'github_version': 'main',
-  'conf_py_path': '/source/'
+  'conf_py_path': '/docs/source/'
 }
 
 myst_enable_extensions = [
