@@ -12,7 +12,7 @@ Dependencies
 Our attack propagation analysis is realized as Eclipse Plugins. The analysis source code is compiled with *Java 17* as Target. Therefore, we recommend using a *Java 17* environment for execution. Newer versions might work, but we have not tested them. Older versions especially *Java 11* or *Java 8* are not supported.  
 
 .. note::
-    If you only want to use the metamodel, you also can use Java 11. However you have to use the Java11 Branch and manually install it.
+    If you only want to use the metamodel, you also can use Java 11. However you have to use the Java11 branch and manually install it.
 
 If not our `Palladio-Bench (Attack Drop)`_ is used, our tooling requires an `Eclipse Modelling Edition <https://www.eclipse.org/downloads/packages/release/2021-12/r/eclipse-modeling-tools>`__ (min. 2021-12) with the following dependencies:
 
