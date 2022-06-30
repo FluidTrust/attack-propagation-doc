@@ -47,8 +47,10 @@
 <li class="toctree-l2"><a class="reference internal" href="metamodel_access_control.html">Modelling Access Control Properties</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Modeling Attackers &amp; Vulnerabilities</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#attacker-specification">Attacker Specification</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Attack Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#attack-specification">Attack Specification</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#vulnerability-container">Vulnerability Container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#category-specification">Category Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pcm-integration">PCM Integration</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="analysis_attack_propagation.html">Analyzing Attack Propagations</a></li>
@@ -92,8 +94,8 @@
 <p>In the properties section, the attacker properties can be specified. In the <em>Attacks</em> section the attacks of the attacker can be selected. The start position of the propagation is defined by the <em>Compromised Components</em> or <em>Compromised Resource Elements</em>. These can be created as children of the attacker. Children can be added by a right click on the element.</p>
 <p>In the <em>Credentials</em> section the initial credentials can be selected. Credentials are the attributes of the access control system. In our case these are <em>UsageSpecifications</em>. These are modelled in the <a class="reference internal" href="metamodel_access_control.html"><span class="doc">context</span></a> model. The attacker can also have optionally a name, stored in <em>Entity Name</em>. <em>Exploit Context Providers</em> is always true. This is for a potential extension later on. Additionally, every attacker has a unique <em>ID</em>.</p>
 </section>
-<section id="id1">
-<h2>Attack Specification<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<section id="attack-specification">
+<span id="id1"></span><h2>Attack Specification<a class="headerlink" href="#attack-specification" title="Permalink to this heading"></a></h2>
 <p>In the attack container the attacks are specified. These are later referenced in the attacker. This allows to create a repository of potential attacks, which are then selected in the attacker. All attacks consist of a <em>Category</em>, <em>Entity Name</em>, and <em>ID</em>. Based on the <em>Category</em> we differ between two types of attacks. The <em>CWE Attack</em> and the <em>CVE Attack</em>.</p>
 <p>The first one is based on <a class="reference external" href="https://cwe.mitre.org/">CWEs</a> and symbolize general attacks. For instance, in the <a class="reference internal" href="../application_scenarios/industry_maintenance.html"><span class="doc">Maintenance Scenario (Running Example)</span></a>, we use the <a class="reference external" href="https://cwe.mitre.org/data/definitions/312.html">CWE 312</a>. This enables attacker to exploit all vulnerabilities with the corresponding CWE class. Since CWEs are hierarchically organized, also all child elements are affected.</p>
 <p>The other type of attack is the <em>CVE Attack</em>. It is based on the <a class="reference external" href="https://cve.mitre.org/">CVE</a> concept and symbolize concrete attacks. The main difference to the <em>CWE Attacks</em> are that this attack can only exploit the corresponding CVE. A CWE attack could exploit all CVEs belonging to its CWE including its children CWEs.</p>
@@ -101,6 +103,38 @@
 <section id="vulnerability-container">
 <h2>Vulnerability Container<a class="headerlink" href="#vulnerability-container" title="Permalink to this heading"></a></h2>
 <p>In the vulnerability container the actual vulnerabilities are specified. Like with the <a class="reference internal" href="#attack-specification"><span class="std std-ref">attacks</span></a>, we differ between <em>CVE Vulnerability</em> and <em>CWE Vulnerability</em>.</p>
+<a class="reference internal image-reference" href="../_images/vulnerabilitySpecification.png"><img alt="vulnerability specification Vulnerability Specification" src="../_images/vulnerabilitySpecification.png" style="width: 600px;" /></a>
+<p>The screenshot shows an exemplary <em>CVE Vulnerability</em> from the <a class="reference internal" href="../application_scenarios/industry_maintenance.html"><span class="doc">Maintenance Scenario (Running Example)</span></a>. The <em>CVE Vulnerability</em> and <em>CWE Vulnerability</em> share most of the properties only the <em>CVE ID</em> is exclusive to a <em>CVE Vulnerability</em>. Most of these properties are based on the <a class="reference external" href="https://www.first.org/cvss/specification-document">CVSS specification</a>. A detailed description of most properties can be read in our paper <span id="id2">[<a class="reference internal" href="../index.html#id3" title="Maximilian Walter, Robert Heinrich, and Ralf Reussner. Architectural attack propagation analysis for identifying confidentiality issues. In 2022 IEEE 19th International Conference on Software Architecture (ICSA), 12 S. Institute of Electrical and Electronics Engineers (IEEE), 2022. URL: https://publikationen.bibliothek.kit.edu/1000146787, doi:10.1109/ICSA53651.2022.00009.">WHR22</a>]</span>. We will shortly describe the common properties without <em>CVEs</em> and <em>CWEs</em>:</p>
+<ul class="simple">
+<li><p><em>Attack Complexity</em>: Describes how complex an attack is. Possible values are <em>LOW</em> and <em>HIGH</em></p></li>
+<li><p><em>Attack Vector</em>: The location from which the vulnerability is exploitable. Possible values are <em>Network</em>, <em>Adjacent Network</em> (is interpreted as Network in the analysis), <em>Local</em></p></li>
+<li><p><em>Availability Impact</em>: Impact on the availability. Possible values are <em>High</em>, <em>Low</em>, and <em>NONE</em></p></li>
+<li><p><em>Confidentiality Impact</em>: Impact on the confidentiality. Possible values are <em>High</em>, <em>Low</em>, and <em>NONE</em>.</p></li>
+<li><p><em>Entity Name</em>: Name of the vulnerability as String value</p></li>
+<li><p><em>Gained Attributes</em>: Attributes an attacker can gain by exploiting the vulnerability. It uses <em>UsageSpecifications</em> specified in the <a class="reference internal" href="metamodel_access_control.html"><span class="doc">context</span></a></p></li>
+<li><p><em>Integrity Impact</em>: Impact on integrity. Possible values are <em>High</em>, <em>Low</em>, and <em>NONE</em></p></li>
+<li><p><em>Privileges</em>: Required privilege level for vulnerabilities. Possible values are <em>Special</em>, <em>Low</em>, and <em>NONE</em></p></li>
+<li><p><em>Required Credentials</em>: special credentials needed for exploitation (currently not supported in the analysis).</p></li>
+<li><p><em>Role</em>: Required roles for exploitation. For instance, a client is only vulnerable to a malicious server. This would be modelled by a role with server.</p></li>
+<li><p><em>Take Over</em>: Through the exploitation of the vulnerability, attackers can gain full control of the architectural element</p></li>
+<li><p><em>User Interaction</em>: Currently not supported in attacker analysis</p></li>
+</ul>
+</section>
+<section id="category-specification">
+<h2>Category Specification<a class="headerlink" href="#category-specification" title="Permalink to this heading"></a></h2>
+<p>In the <em>Category Specification</em> software architects can model <em>CVEIDs</em> and <em>CWEIDs</em>. These are used to represent CVE elements and CWE classes.</p>
+<a class="reference internal image-reference" href="../_images/categorySpecification.png"><img alt="category specification Category Specification" src="../_images/categorySpecification.png" style="width: 600px;" /></a>
+<p>The screenshot shows the specified categories for the <a class="reference internal" href="../application_scenarios/industry_maintenance.html"><span class="doc">Maintenance Scenario (Running Example)</span></a>.</p>
+</section>
+<section id="pcm-integration">
+<h2>PCM Integration<a class="headerlink" href="#pcm-integration" title="Permalink to this heading"></a></h2>
+<p>The PCM integration is done by referencing the PCM elements. This referencing is stored in the <em>System Specification Container</em>. This is done by system integration elements, which reference PCM elements. The general idea is, that these elements are mapping elements between the extension model elements and the classical PCM elements.</p>
+<ul class="simple">
+<li><p><em>Vulnerbility System Integration</em>: Reference between a vulnerability and a PCM element.</p></li>
+<li><p><em>Role System Integration</em>: Reference between a Role and a PCM element</p></li>
+<li><p><em>Non Global Communication</em>: Indicates a component can’t communicate globally, but only with its direct connected elements</p></li>
+</ul>
+<p>The other elements are not relevant for the attack propagation analysis.</p>
 </section>
 </section>
 

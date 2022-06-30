@@ -19,6 +19,7 @@ In the properties section, the attacker properties can be specified. In the *Att
 In the *Credentials* section the initial credentials can be selected. Credentials are the attributes of the access control system. In our case these are *UsageSpecifications*. These are modelled in the :doc:`context <metamodel_access_control>` model. The attacker can also have optionally a name, stored in *Entity Name*. *Exploit Context Providers* is always true. This is for a potential extension later on. Additionally, every attacker has a unique *ID*.
 
 .. _attack-specification:
+
 Attack Specification
 ####################
 
@@ -32,4 +33,48 @@ The other type of attack is the *CVE Attack*. It is based on the `CVE <https://c
 Vulnerability Container
 #######################
 
-In the vulnerability container the actual vulnerabilities are specified. Like with the :ref:`attacks <attack-specification>`, we differ between *CVE Vulnerability* and *CWE Vulnerability*.
+In the vulnerability container the actual vulnerabilities are specified. Like with the :ref:`attacks <attack-specification>`, we differ between *CVE Vulnerability* and *CWE Vulnerability*. 
+
+.. image:: /_static/images/vulnerabilitySpecification.png
+   :width: 600
+   :alt: vulnerability specification
+    Vulnerability Specification
+
+The screenshot shows an exemplary *CVE Vulnerability* from the :doc:`/application_scenarios/industry_maintenance`. The *CVE Vulnerability* and *CWE Vulnerability* share most of the properties only the *CVE ID* is exclusive to a *CVE Vulnerability*. Most of these properties are based on the `CVSS specification <https://www.first.org/cvss/specification-document>`_. A detailed description of most properties can be read in our paper :cite:p:`architecturalAttack`. We will shortly describe the common properties without *CVEs* and *CWEs*:
+
+* *Attack Complexity*: Describes how complex an attack is. Possible values are *LOW* and *HIGH*
+* *Attack Vector*: The location from which the vulnerability is exploitable. Possible values are *Network*, *Adjacent Network* (is interpreted as Network in the analysis), *Local*
+* *Availability Impact*: Impact on the availability. Possible values are *High*, *Low*, and *NONE*
+* *Confidentiality Impact*: Impact on the confidentiality. Possible values are *High*, *Low*, and *NONE*.
+* *Entity Name*: Name of the vulnerability as String value
+* *Gained Attributes*: Attributes an attacker can gain by exploiting the vulnerability. It uses *UsageSpecifications* specified in the :doc:`context <metamodel_access_control>`
+* *Integrity Impact*: Impact on integrity. Possible values are *High*, *Low*, and *NONE*
+* *Privileges*: Required privilege level for vulnerabilities. Possible values are *Special*, *Low*, and *NONE*
+* *Required Credentials*: special credentials needed for exploitation (currently not supported in the analysis).
+* *Role*: Required roles for exploitation. For instance, a client is only vulnerable to a malicious server. This would be modelled by a role with server.
+* *Take Over*: Through the exploitation of the vulnerability, attackers can gain full control of the architectural element
+* *User Interaction*: Currently not supported in attacker analysis
+
+Category Specification
+######################
+
+In the *Category Specification* software architects can model *CVEIDs* and *CWEIDs*. These are used to represent CVE elements and CWE classes.
+
+.. image:: /_static/images/categorySpecification.png
+   :width: 600
+   :alt: category specification
+    Category Specification
+
+The screenshot shows the specified categories for the :doc:`/application_scenarios/industry_maintenance`.
+
+
+PCM Integration
+###############
+
+The PCM integration is done by referencing the PCM elements. This referencing is stored in the *System Specification Container*. This is done by system integration elements, which reference PCM elements. The general idea is, that these elements are mapping elements between the extension model elements and the classical PCM elements.
+
+* *Vulnerbility System Integration*: Reference between a vulnerability and a PCM element.
+* *Role System Integration*: Reference between a Role and a PCM element
+* *Non Global Communication*: Indicates a component can't communicate globally, but only with its direct connected elements
+
+The other elements are not relevant for the attack propagation analysis.

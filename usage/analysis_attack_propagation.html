@@ -104,12 +104,27 @@
 </section>
 <section id="analysis-results">
 <h2>Analysis Results<a class="headerlink" href="#analysis-results" title="Permalink to this heading"></a></h2>
-<p>There are two results files for the attack propagation possible. The first is the modification mark model and the second the attack graph image</p>
+<p>There are two results files for the attack propagation possible. The first is the modification mark model and the second is the attack graph image.</p>
 <section id="modification-mark-model">
 <h3>Modification Mark Model<a class="headerlink" href="#modification-mark-model" title="Permalink to this heading"></a></h3>
+<p>In the <em>kamp4attackmodificationmarks</em> model the regular output is stored. It contains two elements. The KAMP4AttackSeedModifications where the attacker for the propagation is selected. The actual output is then stored in the <em>CredentialChange</em> element. It contains a list of compromised architectural elements.</p>
+<a class="reference internal image-reference" href="../_images/kamp4Attack.png"><img alt="Attack Output Output model" src="../_images/kamp4Attack.png" style="width: 600px;" /></a>
+<p>The screenshot shows an excerpt of the output model for the <a class="reference internal" href="../application_scenarios/industry_maintenance.html"><span class="doc">Maintenance Scenario (Running Example)</span></a>. It shows the compromised architectural elements. In our case, we selected (blue) the first compromised resource. In the properties view the additional properties are show. The <em>Affected Element</em> shows which architectural element is compromised (here <em>TerminalServer</em>). The <em>Causing Elements</em> show the source and reason for the compromisation. Here the attacker attacked from the <em>TerminalComponent</em> by using the <em>Admin</em> credentials. Every architectural element in this field is the source of the attack. Vulnerabilities or credentials (<em>UsageSpecification</em>) are the reasons. The <em>ID</em> is the unique id of the element. The last element is <em>Tool Derived</em>. It indicates, that the element is automatically derived from our analysis. If the value is <em>false</em> it is from the initial configuration.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The model also contains container for dynamically created elements. Since in EMF every modelled must be contained in one container, we need to store these dynamically generated model elements somewhere. They cannot be stored in the originally models, therefore we contain them here.</p>
+</div>
 </section>
 <section id="attack-graph-image">
 <h3>Attack Graph Image<a class="headerlink" href="#attack-graph-image" title="Permalink to this heading"></a></h3>
+<p>By activating the graph creation, our analysis produces an attack graph. The image shows the attack graph from the <a class="reference internal" href="../application_scenarios/industry_maintenance.html"><span class="doc">Maintenance Scenario (Running Example)</span></a>.</p>
+<a class="reference internal image-reference" href="../_images/attackTree.png"><img alt="Attack Graph Attack Graph Output" src="../_images/attackTree.png" style="width: 600px;" /></a>
+<p>Each node is either an architectural element, data element or role. The type is indicated with the textual description. Architectural elements are always “<em>Type</em>: <em>Name</em>”. The types are <em>AssemblyContext</em>, <em>LinkingResource</em>, or <em>ResourceContainer</em>. Data elements are either “<em>datatype</em> from <em>instantiated Service</em> ” for return values from services or “<em>Name</em>: <em>parametername</em>” for parameter values. Credentials are indicated by “Role: <em>name</em>”.</p>
+<p>The edges contain the reason for compromising an element. A element can be compromised by using credentials, vulnerabilities or implicit. The propagation by credentials is indicated by “Role: <em>name</em>”. For vulnerabilities only the name is written on the edge. Implicit propagations use our assumptions. For instance in our example is that by compromising a component all data is affected.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Despite that it might be assumed by the graphical representation, the graph does always show the order of the attack propagation. It only shows the affected element and by which element it was affected.</p>
+</div>
 </section>
 </section>
 </section>
