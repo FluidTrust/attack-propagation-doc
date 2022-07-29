@@ -72,4 +72,4 @@ Each node is either an architectural element, data element or role. The type is 
 The edges contain the reason for compromising an element. A element can be compromised by using credentials, vulnerabilities or implicit. The propagation by credentials is indicated by "Role: *name*". For vulnerabilities only the name is written on the edge. Implicit propagations use our assumptions. For instance in our example is that by compromising a component all data is affected.
 
 .. note::
-    Despite that it might be assumed by the graphical representation, the graph does always show the order of the attack propagation. It only shows the affected element and by which element it was affected.
+    Despite that it might be assumed by the graphical representation, the graph does not always show the order of the attack propagation. It only shows the affected element and by which element it was affected.
