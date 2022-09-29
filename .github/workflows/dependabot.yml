@@ -1,0 +1,32 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "friday"
+      time: "08:00"
+      timezone: "Europe/Berlin"
+    commit-message:
+      prefix: "Dependency"
+      include: "scope"
+  - package-ecosystem: "pip"
+    directory: "/docs/"
+    schedule:
+      interval: "weekly"
+      day: "friday"
+      time: "08:00"
+      timezone: "Europe/Berlin"
+    commit-message:
+      prefix: "Dependency"
+      include: "scope"
+  - package-ecosystem: "docker"
+    directory: "/docs/"
+    schedule:
+      interval: "weekly"
+      day: "friday"
+      time: "08:00"
+      timezone: "Europe/Berlin"
+    commit-message:
+      prefix: "Dependency"
+      include: "scope"
