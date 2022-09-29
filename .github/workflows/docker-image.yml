@@ -19,7 +19,7 @@ jobs:
       run: docker run --rm -v $GITHUB_WORKSPACE/docs:/docs build-doc make html
     - name: Deploy 🚀
       if: github.ref == 'refs/heads/main'
-      uses: JamesIves/github-pages-deploy-action@v4.3.3
+      uses: JamesIves/github-pages-deploy-action@v4.4.0
       with:
         branch: gh-pages
         folder: docs/build/html
