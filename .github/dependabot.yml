@@ -21,7 +21,7 @@ updates:
       prefix: "Dependency"
       include: "scope"
   - package-ecosystem: "docker"
-    directory: "/docs/"
+    directory: "/"
     schedule:
       interval: "weekly"
       day: "friday"
