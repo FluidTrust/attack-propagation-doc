@@ -1,7 +1,7 @@
 User Documentation
 ==================
 
-Here, we describe the general usage of our tooling. In the different sections, we explain different parts based on our running example (see :doc:`/application_scenarios/industry_maintenance`). We would recommend reading beforehand the section about the background and the architectural model.
+Here, we describe the general usage of our tooling. In the different sections, we explain different parts based on our running example (see :doc:`/application_scenarios/industry_maintenance`). We recommend reading beforehand the section about the background and the architectural model.
 
 
 .. toctree::
