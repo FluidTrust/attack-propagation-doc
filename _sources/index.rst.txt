@@ -10,19 +10,21 @@ Welcome to Palladio Attack Propagation's documentation!
 
 This contains the documentation for multiple Eclipse plugins to analyze confidentiality properties of a given software architecture. It uses the Palladio Component Model (PCM). Currently, 3 types of analyses are supported:
 
-#. Attacker propagation :cite:p:`architecturalAttack`
+
+#. Scenario Access Usage Analysis :cite:p:`WalterScenario`
+
+   * different usage scenarios from PCM are analyzed regarding access violations
+   * misusage scenarios are supported (similar to misusage diagrams)
+
+#. Attack Propagation Analysis :cite:p:`architecturalAttack`
 
    * propagation based on CVE and CWE vulnerabilities
    * supports different authorization levels and gaining of new credentials
 
-#. Scenario analysis (currently in development)
+#. Targeted Attack Graph Analysis
 
-   * different usage scenarios from PCM are analyzed regarding the confidentiality
-   * confidentiality is based on access control and whether certain services can be called with the given set of credentials
-   * misusage scenarios are supported (similar to misusage diagrams)
-
-#. Attack surface analysis (currently in development)
-
+   * find attack paths to a targeted element
+   * uses filters to identify relevant attack path
 
 .. note::
 	under active development
