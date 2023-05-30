@@ -11,4 +11,5 @@ Here, we describe the general usage of our tooling. In the different sections, w
    palladio
    metamodel_access_control
    metamodel_attacker
+   analysis_scenario_usage
    analysis_attack_propagation
