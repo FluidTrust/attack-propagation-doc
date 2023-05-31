@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Scenario Analysis &mdash; Palladio Attack Propagation 1.0.0 documentation</title>
+  <title>Developer Information for the Scenario Analysis &mdash; Palladio Attack Propagation 1.0.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -20,7 +20,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Attack Propagation Analysis" href="AttackPropagationAnalysis.html" /> 
+    <link rel="next" title="XACML Transformation" href="XACMLTransformation.html" />
+    <link rel="prev" title="Developer Information for the Attack Propagation Analysis" href="AttackPropagationAnalysis.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -48,8 +49,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../application_scenarios/index.html">Application Scenarios</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage/index.html">User Documentation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Documentation</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="AttackPropagationAnalysis.html">Attack Propagation Analysis</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Scenario Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AttackPropagationAnalysis.html">Developer Information for the Attack Propagation Analysis</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Developer Information for the Scenario Analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#scenario-analysis-workflow">Scenario Analysis Workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scenario-analysis">Scenario Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="XACMLTransformation.html">XACML Transformation</a></li>
 </ul>
 </li>
 </ul>
@@ -69,9 +75,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">Developer Documentation</a></li>
-      <li class="breadcrumb-item active">Scenario Analysis</li>
+      <li class="breadcrumb-item active">Developer Information for the Scenario Analysis</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/FluidTrust/attack-propagation-doc/blob/main/docs/source/developer/ScenarioAnalysis.md" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/FluidTrust/attack-propagation-doc/blob/main/docs/source/developer/ScenarioAnalysis.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -79,15 +85,25 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="scenario-analysis">
-<h1>Scenario Analysis<a class="headerlink" href="#scenario-analysis" title="Permalink to this heading"></a></h1>
+  <section id="developer-information-for-the-scenario-analysis">
+<h1>Developer Information for the Scenario Analysis<a class="headerlink" href="#developer-information-for-the-scenario-analysis" title="Permalink to this heading"></a></h1>
+<section id="scenario-analysis-workflow">
+<h2>Scenario Analysis Workflow<a class="headerlink" href="#scenario-analysis-workflow" title="Permalink to this heading"></a></h2>
+<p>The workflow of the analysis is defined in the bundle <em>org.palladiosimulator.pcm.confidentiality.context.analysis.execution</em> and the class <a class="reference external" href="https://updatesite.palladio-simulator.com/fluidtrust/palladio-addons-contextconfidentiality-analysis/releases/5.2/javadoc/org/palladiosimulator/pcm/confidentiality/context/analysis/execution/workflow/ScenarioAnalysisWorkflow.html">ScenarioAnalysisWorkflow</a>. It consists first of loading the different models. Then the analysis is performed. The last step is to save the results.</p>
+<p>The analysis execution job (<a class="reference external" href="https://updatesite.palladio-simulator.com/fluidtrust/palladio-addons-contextconfidentiality-analysis/releases/5.2/javadoc/org/palladiosimulator/pcm/confidentiality/context/analysis/execution/workflow/job/ScenarioAnalysisJob.html">ScenarioAnalysisJob</a>), also initializes the PDP and transforms the context files to an XACML file (see  <a class="reference internal" href="XACMLTransformation.html"><span class="doc">XACML</span></a>). It is important, that both the generation of the XACML file and the initialisation of the PDP is done before the actual propagation is triggered. Otherwise, an exception might occur.</p>
+</section>
+<section id="scenario-analysis">
+<h2>Scenario Analysis<a class="headerlink" href="#scenario-analysis" title="Permalink to this heading"></a></h2>
+<p>The main bundle for the scenario analysis is <em>org.palladiosimulator.pcm.confidentiality.context.scenarioanalysis.provider</em>. Here, the entry point for the analysis is <a class="reference external" href="https://updatesite.palladio-simulator.com/fluidtrust/palladio-addons-contextconfidentiality-analysis/releases/5.2/javadoc/org/palladiosimulator/pcm/confidentiality/context/scenarioanalysis/provider/ScenarioAnalysisSystemImpl.html">ScenarioAnalysisSystemImpl</a>. The starting point is the <em>runScenarioAnalysis</em> methods. It iterates over each usage scenario and the contained <em>EntryLevelSystemCalls</em>. For each scenario it checks whether it is a misusage scenario or not. Then it follows the call from an <em>EntryLevelSystemCall</em> over the <em>ExternalCalls</em>. Each call is checked against the PDP. The results of a query is stored in <a class="reference external" href="https://updatesite.palladio-simulator.com/fluidtrust/palladio-addons-contextconfidentiality-analysis/releases/5.2/javadoc/org/palladiosimulator/pcm/confidentiality/context/scenarioanalysis/output/creation/ResultEMFModelStorage.html">ResultEMFModelStorage</a> The propagation between the services is implemented in <a class="reference external" href="https://updatesite.palladio-simulator.com/fluidtrust/palladio-addons-contextconfidentiality-analysis/releases/5.2/javadoc/org/palladiosimulator/pcm/confidentiality/context/scenarioanalysis/visitors/SystemWalker.html">SystemWalker</a>. The behavior is mainly straight forward. It identifies the next service name and then finds it by using the Assembly with the AssemblyConnectors. In case, for that for an AssemblyConnector a AttrbuteProvider exists, the analysis replaces the attribute context.</p>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="AttackPropagationAnalysis.html" class="btn btn-neutral float-left" title="Attack Propagation Analysis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="AttackPropagationAnalysis.html" class="btn btn-neutral float-left" title="Developer Information for the Attack Propagation Analysis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="XACMLTransformation.html" class="btn btn-neutral float-right" title="XACML Transformation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

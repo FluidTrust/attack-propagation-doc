@@ -92,18 +92,26 @@
 <section id="analysis-execution">
 <h2>Analysis Execution<a class="headerlink" href="#analysis-execution" title="Permalink to this heading"></a></h2>
 <p>The analysis can be started via an Eclipse launch configuration. The launch configuration name is <em>Attackeranalysis</em>. It can be created in Eclipse by clicking Run-&gt;Run Configurations. This opens a dialog similar to the example image below. There select <em>Attackeranalysis</em> (left side). This creates a new launch config for the attacker analysis. For the scenario-based access usage analysis select as analysis type <em>Scenario</em>. Afterwards select the software architecture models you want to analyse. For the scenario analysis, we need the <em>Repository Model</em>, <em>Context Model</em>, <em>Usage Model</em>. The model can be selected either as reference from the workspace (recommended) or from the file system. By pressing on the launch button the analysis is executed.</p>
-<a class="reference internal image-reference" href="../_images/scenarioOutputMetamodel.png"><img alt="Launch Config Example Image Example Launch Configuration" src="../_images/scenarioOutputMetamodel.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../_images/scenarioLaunch.png"><img alt="Launch Config Example Image Example Launch Configuration" src="../_images/scenarioLaunch.png" style="width: 600px;" /></a>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The selected models need to be compatible to each other. For instance, the <em>Repository Model</em> needs to contain the components stored in the <em>Usage Model</em>. The analysis does not perform checks, whether the models are complete and all the references are valid. Such cases might create randoms errors.</p>
 </div>
-<p>During the execution of the analysis the console prints out the different execution steps. More detaile about the workflow can be found in  the <span class="xref std std-doc">developer documentation</span></p>
-<a class="reference internal image-reference" href="_static/images/scenarioOutput.png"><img alt="Console Output Example Console Output" src="_static/images/scenarioOutput.png" style="width: 600px;" /></a>
+<p>During the execution of the analysis the console prints out the different execution steps. More detaile about the workflow can be found in  the <a class="reference internal" href="../developer/ScenarioAnalysis.html"><span class="doc">developer documentation</span></a>.</p>
+<a class="reference internal image-reference" href="../_images/launch.png"><img alt="Console Output Example Console Output" src="../_images/launch.png" style="width: 600px;" /></a>
 </section>
 <section id="analysis-results">
 <h2>Analysis Results<a class="headerlink" href="#analysis-results" title="Permalink to this heading"></a></h2>
-<p>The analysis results are stored in the output model (file ending <em>*.outputmodel</em>).</p>
+<p>The analysis results are stored in the output model (file ending <em>*.outputmodel</em>). The metamodel is shown in the picture below.</p>
 <a class="reference internal image-reference" href="../_images/scenarioOutputMetamodel.png"><img alt="Scenario Output Metamodel Scenario Output Metamodel" src="../_images/scenarioOutputMetamodel.png" style="width: 600px;" /></a>
+<p>The root container is the <em>AnalysisResult</em>. It contains the individual results for each Usage Scenario and Misusage Scenario. There are two boolean values indicating whether the scenario is passed and whether it is a Misusage Scenario. A usage scenario is passed if all service calls within a successful. A Misusage Scenario is passed if at least one service call fails. Each scenario lists the output for each <em>EntryLevelSystemCall</em> within a scenario.</p>
+<p>The output model can be edited by an EMF tree editor. The editor should open by double clicking on the output file in Model Explorer.  The image below illustrates the expected output for the Maintenance Scenario.</p>
+<a class="reference internal image-reference" href="../_images/treeEditorScenarioOutput.png"><img alt="Scenario Output Maintenance Scenario Output" src="../_images/treeEditorScenarioOutput.png" style="width: 600px;" /></a>
+<p>The upper half shows the output model structred as defined by the previous explained metamodel. Users can select any of the output elements. The detailed information are shown in the <em>Properties</em> tab (lower half). It lists the attributes like in our case that it is not a Misusage Scenario, that it is passed and the scenario to which the elements belong.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Sometimes the <em>Property</em> tab is not initially shown. Either because another tab such as the <em>Console</em> is selected or the tab is closed. In the first case the tab can be selected by clicking on it. In case the tab is closed, it can be opened in the Eclipse Menu by clicking on Window-&gt;Show View-&gt;Other-&gt;Properties.</p>
+</div>
 </section>
 </section>
 

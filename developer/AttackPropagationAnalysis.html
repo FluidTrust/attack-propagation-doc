@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Attack Propagation Analysis &mdash; Palladio Attack Propagation 1.0.0 documentation</title>
+  <title>Developer Information for the Attack Propagation Analysis &mdash; Palladio Attack Propagation 1.0.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -20,7 +20,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Scenario Analysis" href="ScenarioAnalysis.html" />
+    <link rel="next" title="Developer Information for the Scenario Analysis" href="ScenarioAnalysis.html" />
     <link rel="prev" title="Developer Documentation" href="index.html" /> 
 </head>
 
@@ -49,11 +49,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../application_scenarios/index.html">Application Scenarios</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage/index.html">User Documentation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Documentation</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Attack Propagation Analysis</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Developer Information for the Attack Propagation Analysis</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#introduction-emf">Introduction EMF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#attack-propagation-workflow">Attack Propagation Workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#attack-propagation-analysis">Attack Propagation Analysis</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="ScenarioAnalysis.html">Scenario Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ScenarioAnalysis.html">Developer Information for the Scenario Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="XACMLTransformation.html">XACML Transformation</a></li>
 </ul>
 </li>
 </ul>
@@ -73,9 +76,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">Developer Documentation</a></li>
-      <li class="breadcrumb-item active">Attack Propagation Analysis</li>
+      <li class="breadcrumb-item active">Developer Information for the Attack Propagation Analysis</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/FluidTrust/attack-propagation-doc/blob/main/docs/source/developer/AttackPropagationAnalysis.md" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/FluidTrust/attack-propagation-doc/blob/main/docs/source/developer/AttackPropagationAnalysis.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -83,11 +86,26 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="attack-propagation-analysis">
-<h1>Attack Propagation Analysis<a class="headerlink" href="#attack-propagation-analysis" title="Permalink to this heading"></a></h1>
+  <section id="developer-information-for-the-attack-propagation-analysis">
+<h1>Developer Information for the Attack Propagation Analysis<a class="headerlink" href="#developer-information-for-the-attack-propagation-analysis" title="Permalink to this heading"></a></h1>
 <section id="introduction-emf">
 <h2>Introduction EMF<a class="headerlink" href="#introduction-emf" title="Permalink to this heading"></a></h2>
-<p>For new developers, we recommend to work through EMF tutorials. One good candidate are the tutorials from <a class="reference external" href="https://www.vogella.com/tutorials/EclipseEMF/article.html">vogella</a></p>
+<p>For new developers, we recommend to work through EMF tutorials. One good candidate are the tutorials from <a class="reference external" href="https://www.vogella.com/tutorials/EclipseEMF/article.html">Vogella</a></p>
+</section>
+<section id="attack-propagation-workflow">
+<h2>Attack Propagation Workflow<a class="headerlink" href="#attack-propagation-workflow" title="Permalink to this heading"></a></h2>
+<p>The workflow of the analysis is defined in the bundle <em>org.palladiosimulator.pcm.confidentiality.context.analysis.execution</em> and the class <a class="reference external" href="https://updatesite.palladio-simulator.com/fluidtrust/palladio-addons-contextconfidentiality-analysis/releases/5.2/javadoc/org/palladiosimulator/pcm/confidentiality/context/analysis/execution/workflow/ClassicalAttackerAnalysisWorkflow.html">ClassicalAttackerAnalysisWorkflow</a>. It consists first of loading the different models. Afterwards, the vulnerabilities from the Repository are rolled out on the AssemblyContext. Then the analysis is performed. The last step is to save the results. Besides saving the output model also a graphical representation can be created. This is optional and requires <a class="reference external" href="https://graphviz.org/">Graphviz</a> to be installed. The responsible class for creating the graphical representation is <a class="reference external" href="https://updatesite.palladio-simulator.com/fluidtrust/palladio-addons-contextconfidentiality-analysis/releases/5.2/javadoc/org/palladiosimulator/pcm/confidentiality/context/analysis/execution/workflow/job/CreateGraphJob.html">CreateGraphJob</a>.</p>
+<p>The analysis execution job (<a class="reference external" href="https://updatesite.palladio-simulator.com/fluidtrust/palladio-addons-contextconfidentiality-analysis/releases/5.2/javadoc/org/palladiosimulator/pcm/confidentiality/context/analysis/execution/workflow/job/AttackerAnalysisJob.html">AttackerAnalysisJob</a>), also initializes the PDP and transforms the context files to an XACML file (see  <a class="reference internal" href="XACMLTransformation.html"><span class="doc">XACML</span></a>). It is important, that both the generation of the XACML file and the initialisation of the PDP is done before the actual propagation is triggered. Otherwise, an exception might occur.</p>
+</section>
+<section id="attack-propagation-analysis">
+<h2>Attack Propagation Analysis<a class="headerlink" href="#attack-propagation-analysis" title="Permalink to this heading"></a></h2>
+<p>The main bundle for the attack propagation is <em>edu.kit.ipd.sdq.kamp4attack</em>. Here, the entry point for the analysis is <a class="reference external" href="https://updatesite.palladio-simulator.com/fluidtrust/palladio-addons-contextconfidentiality-analysis/releases/5.2/javadoc/edu/kit/ipd/sdq/kamp4attack/core/AttackPropagationAnalysis.html">AttackPropagationAnalysis</a>. It contains in the <em>runChangePropagationAnalysis</em> the main loop for the propagation. It contains first the initialisation. Here, it is important to reset the different caches, because otherwise the results might contain the results from the previous runs. Afterwards there is the loop, which calculates the transitive closure of the attack propagation. The loop is repeated till no changes happens.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The changes are not automatically detected. Hence, it is necessary in the propagation rules to mark the change. This is realized by calling <em>setChanged(true)</em> on the CredentialChange object. Otherwise, the analysis won’t propagate. It is also important to reset the change value at the beginging of the Loop otherwise there is a infinite loop.</p>
+</div>
+<p>The loop calls the different propagation rules. The propagation rules are declared in the bundle <em>edu.kit.ipd.sdq.kamp4attack.api</em> and the package <em>edu.kit.ipd.sdq.kamp4attack.core.changepropagation.changes.propagationsteps</em>. The rules are for each architectural element as an interface. Each propagation rule is implemented twice. There exists an implementation for the vulnerability and credential (context attribute) based propagation. The concrete propagation rules are implemented in the package <em>edu.kit.ipd.sdq.kamp4attack.core.changepropagation.changes</em>. The ending of a implementation indicates whether it is the propagation by credentials (<em>Context</em>) or vulnerability. The propagation implementations then first identify the already compromised elements and then identify the connected elements based on their propagation.</p>
+<p>Each connected element is then checked, whether the attack can compromise it. These checks are implemented in the <em>edu.kit.ipd.sdq.kamp4attack.core.changepropagation.attackhandlers</em> package. For each architectural element there is a specific <em>Handler</em> implemented. Depending on the propagation type (context or vulnerablity) the handler delegates the calls to a specific handler in the packages <em>edu.kit.ipd.sdq.kamp4attack.core.changepropagation.attackhandlers.context</em> and <em>edu.kit.ipd.sdq.kamp4attack.core.changepropagation.attackhandlers.vulnerability</em>.</p>
 </section>
 </section>
 
@@ -96,7 +114,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="Developer Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="ScenarioAnalysis.html" class="btn btn-neutral float-right" title="Scenario Analysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ScenarioAnalysis.html" class="btn btn-neutral float-right" title="Developer Information for the Scenario Analysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
