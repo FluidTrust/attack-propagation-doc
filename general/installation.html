@@ -87,7 +87,7 @@
              
   <section id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h1>
-<p>We provide multiple installation methods of our attack propagation. Depending on the use case different variants are preferably. For user who only want to try or only use the attack propagation, we would recommend the <a class="reference internal" href="#bench"><span class="std std-ref">Palladio-Bench (Attack Drop)</span></a>. It is the easiest way to get started. For more advanced users or potential developers, we would recommend a mixture of the <a class="reference internal" href="#manual-installation"><span class="std std-ref">Manual Installation</span></a> and the <a class="reference internal" href="#update-site-installation"><span class="std std-ref">Update Site Installation</span></a> variant (also see sec. <a class="reference internal" href="#dev-install"><span class="std std-ref">Recommended Developer Installation</span></a>).</p>
+<p>We provide multiple installation methods of our attack propagation. Depending on the use case different variants are preferably. For user who only want to try or only use the attack propagation, we would recommend the <a class="reference internal" href="#bench"><span class="std std-ref">Palladio-Bench (Attack Drop)</span></a> and use the current release. It is the easiest way to get started. For more advanced users or potential developers, we would recommend a mixture of the <a class="reference internal" href="#manual-installation"><span class="std std-ref">Manual Installation</span></a> and the <a class="reference internal" href="#update-site-installation"><span class="std std-ref">Update Site Installation</span></a> variant (also see sec. <a class="reference internal" href="#dev-install"><span class="std std-ref">Recommended Developer Installation</span></a>).</p>
 <section id="dependencies">
 <span id="id1"></span><h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this heading"></a></h2>
 <p>Our attack propagation analysis is realized as Eclipse Plugins. The analysis source code is compiled with <em>Java 17</em> as Target. Therefore, we recommend using a <em>Java 17</em> environment for execution. Newer versions might work, but we have not tested them. Older versions especially <em>Java 11</em> or <em>Java 8</em> are not supported.</p>
@@ -115,12 +115,16 @@
 <p class="admonition-title">Note</p>
 <p>We provide an Eclipse installation file. The file assumes that the Eclipse Modelling Tools are already installed. After downloading the file you can install it in Eclipse via File-&gt;Import-&gt;Install-&gt;Install Software Items from File and then selecting the installation file. <a class="reference download internal" download="" href="../_downloads/91a431b5786405a5c4e08fec18496c45/dependencies.p2f"><code class="xref download docutils literal notranslate"><span class="pre">Install-File</span></code></a>.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the release update site replace <em>nightly</em> in the urls with <em>release/latest</em>.</p>
+</div>
 </section>
 <section id="palladio-bench-attack-drop">
 <span id="bench"></span><h2>Palladio-Bench (Attack Drop)<a class="headerlink" href="#palladio-bench-attack-drop" title="Permalink to this heading"></a></h2>
 <p>We created an Eclipse product, which can be used to start our analysis and view the models. It should be configured that it automatically opens a workspace with the necessary projects loaded.</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://updatesite.palladio-simulator.com/fluidtrust/palladio-bench-product-attackerpropagation/nightly/">Download</a> and unzip the version for your operating system</p></li>
+<li><p><a class="reference external" href="https://updatesite.palladio-simulator.com/fluidtrust/palladio-bench-product-attackerpropagation/release/latest">Download</a> and unpack the version for your operating system</p></li>
 <li><p>Start the application by executing the <em>PalladioBench</em> binary (not the eclipse one!)</p></li>
 <li><dl class="simple">
 <dt>After the load screen you should see 3 Projects in the Modelviewer on the left side:</dt><dd><ul>
@@ -132,6 +136,10 @@
 </dl>
 </li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The nightly version can be found <a class="reference external" href="https://updatesite.palladio-simulator.com/fluidtrust/palladio-bench-product-attackerpropagation/nightly">here</a>.</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The MAC-Version might not work, because of MACOS security features. In that case <a class="reference external" href="https://sdqweb.ipd.kit.edu/wiki/PCM_Installation#Mac_OS_X">this</a> might help. If not, you can still use the update site or manually install the tooling, but you are required to solve the dependencies manually.</p>
