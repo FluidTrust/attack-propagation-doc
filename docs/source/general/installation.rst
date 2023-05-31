@@ -2,7 +2,8 @@
 Installation
 ============
 
-We provide multiple installation methods of our attack propagation. Depending on the use case different variants are preferably. For user who only want to try or only use the attack propagation, we would recommend the :ref:`bench`. It is the easiest way to get started. For more advanced users or potential developers, we would recommend a mixture of the :ref:`manual-installation` and the :ref:`update-site-installation` variant (also see sec. :ref:`dev-install`).
+We provide multiple installation methods of our attack propagation. Depending on the use case different variants are preferably. For user who only want to try or only use the attack propagation, we would recommend the :ref:`bench` and use the current release. It is the easiest way to get started. For more advanced users or potential developers, we would recommend a mixture of the :ref:`manual-installation` and the :ref:`update-site-installation` variant (also see sec. :ref:`dev-install`).
+
 
 .. _dependencies:
 
@@ -34,6 +35,9 @@ The eclipse dependencies without a link are available from `Eclipse Orbit <https
 .. note::
     We provide an Eclipse installation file. The file assumes that the Eclipse Modelling Tools are already installed. After downloading the file you can install it in Eclipse via File->Import->Install->Install Software Items from File and then selecting the installation file. :download:`Install-File </_static/dependencies.p2f>`.
 
+.. note::
+    For the release update site replace *nightly* in the urls with *release/latest*.
+
 .. _bench:
 
 Palladio-Bench (Attack Drop)
@@ -42,12 +46,15 @@ Palladio-Bench (Attack Drop)
 
 We created an Eclipse product, which can be used to start our analysis and view the models. It should be configured that it automatically opens a workspace with the necessary projects loaded.
 
-*  `Download <https://updatesite.palladio-simulator.com/fluidtrust/palladio-bench-product-attackerpropagation/nightly/>`__ and unzip the version for your operating system
+*  `Download <https://updatesite.palladio-simulator.com/fluidtrust/palladio-bench-product-attackerpropagation/release/latest>`__ and unpack the version for your operating system
 * Start the application by executing the *PalladioBench* binary (not the eclipse one!)
 * After the load screen you should see 3 Projects in the Modelviewer on the left side:
     * edu.kit.ipd.sdq.kamp4attack.tests
     * org.palladiosimulator.pcm.confidentiality.context.analysis.testframework
     * org.palladiosimulator.pcm.confidentiality.context.analysis.testmodels
+
+.. note::
+    The nightly version can be found `here <https://updatesite.palladio-simulator.com/fluidtrust/palladio-bench-product-attackerpropagation/nightly>`_.
 
 .. note::
     The MAC-Version might not work, because of MACOS security features. In that case `this <https://sdqweb.ipd.kit.edu/wiki/PCM_Installation#Mac_OS_X>`__ might help. If not, you can still use the update site or manually install the tooling, but you are required to solve the dependencies manually.
@@ -76,6 +83,7 @@ We provide also two Eclipse update site for our attack propagation. The eclipse 
 
 .. note::
     We also provide a complete Eclipse installation file. Using this installation file, it is not necessary to install the dependencies before, since they are bundled within. The file assumes that the Eclipse Modelling Tools are already installed. After downloading the file you can install it in Eclipse via File->Import->Install->Install Software Items from File and then selecting the installation file. :download:`Install-File </_static/full-installation.p2f>`.
+
 
 .. _dev-install:
 
