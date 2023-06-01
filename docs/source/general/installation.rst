@@ -46,7 +46,7 @@ Palladio-Bench (Attack Drop)
 
 We created an Eclipse product, which can be used to start our analysis and view the models. It should be configured that it automatically opens a workspace with the necessary projects loaded.
 
-*  `Download <https://updatesite.palladio-simulator.com/fluidtrust/palladio-bench-product-attackerpropagation/release/latest>`__ and unpack the version for your operating system
+*  `Download <https://updatesite.palladio-simulator.com/fluidtrust/palladio-bench-product-attackerpropagation/releases/latest/>`__ and unpack the version for your operating system
 * Start the application by executing the *PalladioBench* binary (not the eclipse one!)
 * After the load screen you should see 3 Projects in the Modelviewer on the left side:
     * edu.kit.ipd.sdq.kamp4attack.tests
