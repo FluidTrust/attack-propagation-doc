@@ -21,7 +21,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Developer Documentation" href="../developer/index.html" />
-    <link rel="prev" title="Analyzing Scenario-based Access Control Policies" href="analysis_scenario_usage.html" /> 
+    <link rel="prev" title="Analysing Scenario-based Access Control Policies" href="analysis_scenario_usage.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -51,7 +51,7 @@
 <li class="toctree-l2"><a class="reference internal" href="palladio.html">Palladio</a></li>
 <li class="toctree-l2"><a class="reference internal" href="metamodel_access_control.html">Modelling Access Control Properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="metamodel_attacker.html">Modeling Attackers &amp; Vulnerabilities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analysis_scenario_usage.html">Analyzing Scenario-based Access Control Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_scenario_usage.html">Analysing Scenario-based Access Control Policies</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Analyzing Attack Propagations</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#scientific-background">Scientific Background</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#screencast-for-attack-propagation">Screencast for Attack Propagation</a></li>
@@ -119,7 +119,7 @@
 <h3>Modification Mark Model<a class="headerlink" href="#modification-mark-model" title="Permalink to this heading"></a></h3>
 <p>In the <em>kamp4attackmodificationmarks</em> model the regular output is stored. It contains two elements. The KAMP4AttackSeedModifications where the attacker for the propagation is selected. The actual output is then stored in the <em>CredentialChange</em> element. It contains a list of compromised architectural elements.</p>
 <a class="reference internal image-reference" href="../_images/kamp4Attack.png"><img alt="Attack Output Output model" src="../_images/kamp4Attack.png" style="width: 600px;" /></a>
-<p>The screenshot shows an excerpt of the output model for the <a class="reference internal" href="../application_scenarios/industry_maintenance.html"><span class="doc">Maintenance Scenario (Running Example)</span></a>. It shows the compromised architectural elements. In our case, we selected (blue) the first compromised resource. In the properties view the additional properties are show. The <em>Affected Element</em> shows which architectural element is compromised (here <em>TerminalServer</em>). The <em>Causing Elements</em> show the source and reason for the compromisation. Here the attacker attacked from the <em>TerminalComponent</em> by using the <em>Admin</em> credentials. Every architectural element in this field is the source of the attack. Vulnerabilities or credentials (<em>UsageSpecification</em>) are the reasons. The <em>ID</em> is the unique id of the element. The last element is <em>Tool Derived</em>. It indicates, that the element is automatically derived from our analysis. If the value is <em>false</em> it is from the initial configuration.</p>
+<p>The screenshot shows an excerpt of the output model for the <a class="reference internal" href="../application_scenarios/industry_maintenance.html"><span class="doc">Maintenance Scenario (Running Example)</span></a>. It shows the compromised architectural elements. In our case, we selected (blue) the first compromised resource. In the properties view the additional properties are show. The <em>Affected Element</em> shows which architectural element is compromised (here <em>TerminalServer</em>). The <em>Causing Elements</em> show the source and reason for the compromisation. Here the attacker attacked from the <em>TerminalComponent</em> by using the <em>Admin</em> credentials. Every architectural element in this field is the source of the attack. Vulnerabilities or credentials (<em>UsageSpecification</em>) are the reasons. The <em>ID</em> is the unique ID of the element. The last element is <em>Tool Derived</em>. It indicates, that the element is automatically derived from our analysis. If the value is <em>false</em> it is from the initial configuration.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The model also contains container for dynamically created elements. Since in EMF every modelled must be contained in one container, we need to store these dynamically generated model elements somewhere. They cannot be stored in the originally models, therefore we contain them here.</p>
@@ -129,8 +129,8 @@
 <h3>Attack Graph Image<a class="headerlink" href="#attack-graph-image" title="Permalink to this heading"></a></h3>
 <p>By activating the graph creation, our analysis produces an attack graph. The image shows the attack graph from the <a class="reference internal" href="../application_scenarios/industry_maintenance.html"><span class="doc">Maintenance Scenario (Running Example)</span></a>.</p>
 <a class="reference internal image-reference" href="../_images/attackTree.png"><img alt="Attack Graph Attack Graph Output" src="../_images/attackTree.png" style="width: 600px;" /></a>
-<p>Each node is either an architectural element, data element or role. The type is indicated with the textual description. Architectural elements are always “<em>Type</em>: <em>Name</em>”. The types are <em>AssemblyContext</em>, <em>LinkingResource</em>, or <em>ResourceContainer</em>. Data elements are either “<em>datatype</em> from <em>instantiated Service</em> ” for return values from services or “<em>Name</em>: <em>parametername</em>” for parameter values. Credentials are indicated by “Role: <em>name</em>”.</p>
-<p>The edges contain the reason for compromising an element. A element can be compromised by using credentials, vulnerabilities or implicit. The propagation by credentials is indicated by “Role: <em>name</em>”. For vulnerabilities only the name is written on the edge. Implicit propagations use our assumptions. For instance in our example is that by compromising a component all data is affected.</p>
+<p>Each node is either an architectural element, data element or role. The type is indicated with the textual description. Architectural elements are always “<em>Type</em>: <em>Name</em>”. The types are <em>AssemblyContext</em>, <em>LinkingResource</em>, or <em>ResourceContainer</em>. Data elements are either “<em>datatype</em> from <em>instantiated Service</em>” for return values from services or “<em>Name</em>: <em>parametername</em>” for parameter values. Credentials are indicated by “Role: <em>name</em>”.</p>
+<p>The edges contain the reason for compromising an element. An element can be compromised by using credentials, vulnerabilities or implicit. The propagation by credentials is indicated by “Role: <em>name</em>”. For vulnerabilities only the name is written on the edge. Implicit propagations use our assumptions. For instance in our example is that by compromising a component all data is affected.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Despite that it might be assumed by the graphical representation, the graph does not always show the order of the attack propagation. It only shows the affected element and by which element it was affected.</p>
@@ -143,7 +143,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="analysis_scenario_usage.html" class="btn btn-neutral float-left" title="Analyzing Scenario-based Access Control Policies" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="analysis_scenario_usage.html" class="btn btn-neutral float-left" title="Analysing Scenario-based Access Control Policies" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="../developer/index.html" class="btn btn-neutral float-right" title="Developer Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
