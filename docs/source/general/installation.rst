@@ -65,7 +65,7 @@ Manual Installation
 *******************
 Please make sure that you have installed the `Dependencies`_. Clone the `metamodel <https://github.com/FluidTrust/Palladio-Addons-ContextConfidentiality-Metamodel>`__ and `analysis <https://github.com/FluidTrust/Palladio-Addons-ContextConfidentiality-Analysis>`__ repositories. The repositories do not contain the source code for the stored metamodels. The easiest solution to create the source code is to build each repository with maven for instance with ``mvn clean verify``. If there is no maven available see :ref:`code-generation`.
 
-After downloading the source code. The necessary plugins for applying the projects are in each repository in the *bundle* folder. All folder in this folder contain plugin projects and must be imported into the eclipse workspace. After importing the projects, a inner eclipse application can be started, where the attack propagation is installed. 
+After downloading the source code. The necessary plugins for applying the projects are in each repository in the *bundle* folder. All folder in this folder contain plugin projects and must be imported into the eclipse workspace. After importing the projects, an inner eclipse application can be started, where the attack propagation is installed. 
 
 
 .. _code-generation:
@@ -90,7 +90,7 @@ We provide also two Eclipse update site for our attack propagation. The eclipse 
 Recommended Developer Installation
 **********************************
 
-For developers, we recommend a mixture between the :ref:`update-site-installation` and :ref:`manual-installation`. Install first the tooling via the update sites (preferably with the installation file) afterwards only import the necessary plugins, for the development step. Eclipse should then automatically choose the correct dependencies for the inner instance. Usually the projects in the workspace are prefered over installed file. However, this can be configured in the launch config. 
+For developers, we recommend a mixture between the :ref:`update-site-installation` and :ref:`manual-installation`. Install first the tooling via the update sites (preferably with the installation file) afterwards only import the necessary plugins, for the development step. Eclipse should then automatically choose the correct dependencies for the inner instance. Usually the projects in the workspace are preferred over installed file. However, this can be configured in the launch config. 
 
 .. note::
     The Palladio models use the CDO-Framework. For easier debugging it is useful to install the `CDODebugUtil <https://github.com/MDSD-Tools/EclipseAddon-CDODebugUtils>`__. It will automatically reorder the layout in the debug view to see the relevant properties. 
