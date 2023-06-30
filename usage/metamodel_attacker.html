@@ -11,10 +11,9 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -110,7 +109,7 @@
 <h2>Vulnerability Container<a class="headerlink" href="#vulnerability-container" title="Permalink to this heading"></a></h2>
 <p>In the vulnerability container the actual vulnerabilities are specified. Like with the <a class="reference internal" href="#attack-specification"><span class="std std-ref">attacks</span></a>, we differ between <em>CVE Vulnerability</em> and <em>CWE Vulnerability</em>.</p>
 <a class="reference internal image-reference" href="../_images/vulnerabilitySpecification.png"><img alt="vulnerability specification Vulnerability Specification" src="../_images/vulnerabilitySpecification.png" style="width: 600px;" /></a>
-<p>The screenshot shows an exemplary <em>CVE Vulnerability</em> from the <a class="reference internal" href="../application_scenarios/industry_maintenance.html"><span class="doc">Maintenance Scenario (Running Example)</span></a>. The <em>CVE Vulnerability</em> and <em>CWE Vulnerability</em> share most of the properties only the <em>CVE ID</em> is exclusive to a <em>CVE Vulnerability</em>. Most of these properties are based on the <a class="reference external" href="https://www.first.org/cvss/specification-document">CVSS specification</a>. A detailed description of most properties can be read in our paper <span id="id2">[<a class="reference internal" href="../index.html#id4" title="Maximilian Walter, Robert Heinrich, and Ralf Reussner. Architectural attack propagation analysis for identifying confidentiality issues. In 2022 IEEE 19th International Conference on Software Architecture (ICSA), 12 S. Institute of Electrical and Electronics Engineers (IEEE), 2022. URL: https://publikationen.bibliothek.kit.edu/1000146787, doi:10.1109/ICSA53651.2022.00009.">WHR22</a>]</span>. We will shortly describe the common properties without <em>CVEs</em> and <em>CWEs</em>:</p>
+<p>The screenshot shows an exemplary <em>CVE Vulnerability</em> from the <a class="reference internal" href="../application_scenarios/industry_maintenance.html"><span class="doc">Maintenance Scenario (Running Example)</span></a>. The <em>CVE Vulnerability</em> and <em>CWE Vulnerability</em> share most of the properties only the <em>CVE ID</em> is exclusive to a <em>CVE Vulnerability</em>. Most of these properties are based on the <a class="reference external" href="https://www.first.org/cvss/specification-document">CVSS specification</a>. A detailed description of most properties can be read in our paper <span id="id2">[<a class="reference internal" href="../index.html#id5" title="Maximilian Walter, Robert Heinrich, and Ralf Reussner. Architectural attack propagation analysis for identifying confidentiality issues. In 2022 IEEE 19th International Conference on Software Architecture (ICSA), 12 S. Institute of Electrical and Electronics Engineers (IEEE), 2022. URL: https://publikationen.bibliothek.kit.edu/1000146787, doi:10.1109/ICSA53651.2022.00009.">WHR22</a>]</span>. We will shortly describe the common properties without <em>CVEs</em> and <em>CWEs</em>:</p>
 <ul class="simple">
 <li><p><em>Attack Complexity</em>: Describes how complex an attack is. Possible values are <em>LOW</em> and <em>HIGH</em></p></li>
 <li><p><em>Attack Vector</em>: The location from which the vulnerability is exploitable. Possible values are <em>Network</em>, <em>Adjacent Network</em> (is interpreted as Network in the analysis), <em>Local</em></p></li>

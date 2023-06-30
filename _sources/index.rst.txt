@@ -21,7 +21,7 @@ This contains the documentation for multiple Eclipse plugins to analyze confiden
    * propagation based on CVE and CWE vulnerabilities
    * supports different authorization levels and gaining of new credentials
 
-#. Targeted Attack Graph Analysis
+#. Targeted Attack Graph Analysis :cite:p:`WalterTargeted`
 
    * find attack paths to a targeted element
    * uses filters to identify relevant attack path
