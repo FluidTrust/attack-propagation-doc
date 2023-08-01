@@ -56,8 +56,8 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#access-control">Access Control</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#attack-propagation">Attack Propagation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#expected-output">Expected Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#application">Application</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#attack-propagation">Attack Propagation</a></li>
 </ul>
 </li>
 </ul>
@@ -85,7 +85,7 @@
           <li class="breadcrumb-item"><a href="index.html">Application Scenarios</a></li>
       <li class="breadcrumb-item active">Maintenance Scenario (Running Example)</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/FluidTrust/attack-propagation-doc/blob/main/docs/source/application_scenarios/industry_maintenance.md" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/FluidTrust/attack-propagation-doc/blob/main/docs/source/application_scenarios/industry_maintenance.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -97,62 +97,53 @@
 <h1>Maintenance Scenario (Running Example)<a class="headerlink" href="#maintenance-scenario-running-example" title="Permalink to this heading"></a></h1>
 <section id="background-setting">
 <h2>Background Setting<a class="headerlink" href="#background-setting" title="Permalink to this heading"></a></h2>
-<p>This scenario is settled in an Industry 4.0 environment. It is based on a previous publication <span id="id1">[<a class="reference internal" href="../index.html#id7" title="Rima Al-Ali, Robert Heinrich, Petr Hnetynka, Adrian Juan-Verdejo, Stephan Seifermann, and Maximilian Walter. Modeling of dynamic trust contracts for industry 4.0 systems. In 12th European Conference on Software Architecture: Companion Proceedings (ECSA '18), September 24–28, 2018, Madrid, Spain. ACM, 2018. URL: https://publikationen.bibliothek.kit.edu/1000087072, doi:10.1145/3241403.3241450.">AAHH+18</a>]</span>. It consists of two companies. The first company produces goods by using a machine. The machine creates log data and safely stores them for maintenance reasons. The second company is a service contractor, which maintains and repairs the machine from the first company. However, the service contractor should only have access to the machine’s log data in case of a machine failure. In other cases, the access should be denied. Additionally, the network contains further components used for storing confidential information, but they are not directly relevant for the operation of the machine.</p>
+<p>This scenario is settled in an Industry 4.0 environment based on a previous publicatio <span id="id1">[<a class="reference internal" href="../index.html#id7" title="Rima Al-Ali, Robert Heinrich, Petr Hnetynka, Adrian Juan-Verdejo, Stephan Seifermann, and Maximilian Walter. Modeling of dynamic trust contracts for industry 4.0 systems. In 12th European Conference on Software Architecture: Companion Proceedings (ECSA '18), September 24–28, 2018, Madrid, Spain. ACM, 2018. URL: https://publikationen.bibliothek.kit.edu/1000087072, doi:10.1145/3241403.3241450.">AAHH+18</a>]</span>. It involves two companies: one produces goods using a machine that generates log data for maintenance purposes, and the other is a service contractor responsible for maintaining and repairing the machine. The service contractor should only have access to the machine’s log data in case of a machine failure, while access should be denied in other cases. Additionally, there are other components in the network used for storing confidential information, but they are not directly relevant to the machine’s operation.</p>
 </section>
 <section id="architectural-model">
 <h2>Architectural Model<a class="headerlink" href="#architectural-model" title="Permalink to this heading"></a></h2>
 <section id="repository-model">
 <h3>Repository-Model<a class="headerlink" href="#repository-model" title="Permalink to this heading"></a></h3>
-<figure class="align-default" id="repositorymaintenance">
-<a class="reference internal image-reference" href="../_images/RepositoryDiagram.svg"><img alt="repository model" src="../_images/RepositoryDiagram.svg" width="750px" /></a>
-<figcaption>
-<p><span class="caption-text">Overview of the repository</span><a class="headerlink" href="#repositorymaintenance" title="Permalink to this image"></a></p>
-</figcaption>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/RepositoryDiagram.svg"><img alt="repository model Overview of the repository" src="../_images/RepositoryDiagram.svg" width="750" /></a>
 </figure>
-<p>The repository model contains 4 components and 3 interfaces. The <em>TerminalComponent</em> represents the terminal for the technician to access the machine. This access is represented by the access service. The <em>MachineComponent</em> represents the machine. It provides services for storing and accessing data representing the log data. The <em>ProductionStorageComponent</em> represents a storage component for storing log data and *ProductStorage represents the component storing other confidential data.</p>
+<p>The repository model contains 4 components and 3 interfaces. The <em>TerminalComponent</em> represents the terminal for the technician to access the machine. This access is managed through the access service. The <em>MachineComponent</em> represents the machine, providing services for storing and accessing log data. The <em>ProductionStorageComponent</em> represents a storage component for log data, and the <em>ProductStorage</em> component stores other confidential data.</p>
 </section>
 <section id="assembly-model">
 <h3>Assembly-Model<a class="headerlink" href="#assembly-model" title="Permalink to this heading"></a></h3>
-<figure class="align-default" id="assemblymaintenance">
-<a class="reference internal image-reference" href="../_images/newAssemblyDiagram.svg"><img alt="system diagram" src="../_images/newAssemblyDiagram.svg" width="750px" /></a>
-<figcaption>
-<p><span class="caption-text">Overview of the Assembly (System)</span><a class="headerlink" href="#assemblymaintenance" title="Permalink to this image"></a></p>
-</figcaption>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/newAssemblyDiagram.svg"><img alt="system diagram Overview of the Assembly (System)" src="../_images/newAssemblyDiagram.svg" width="750" /></a>
 </figure>
-<p>The system diagram consist of 4 instantiated components. The instantiated Terminal is connected with the Machine, which is connected with the ProductionStorage. The ProductStorage is not directly connected to the other components.</p>
+<p>The system diagram consists of 4 instantiated components. The instantiated <em>Terminal</em> is connected with the <em>Machine</em>, which is connected with the <em>ProductionStorage</em>. The <em>ProductStorage</em> is not directly connected to the other components.</p>
 </section>
 <section id="resourceenvironment-model">
 <h3>ResourceEnvironment-Model<a class="headerlink" href="#resourceenvironment-model" title="Permalink to this heading"></a></h3>
-<figure class="align-default" id="resourcemaintenance">
-<a class="reference internal image-reference" href="../_images/ResourceEnvironmentDiagram.svg"><img alt="resource environment diagram" src="../_images/ResourceEnvironmentDiagram.svg" width="750px" /></a>
-<figcaption>
-<p><span class="caption-text">Overview of the repository</span><a class="headerlink" href="#resourcemaintenance" title="Permalink to this image"></a></p>
-</figcaption>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/ResourceEnvironmentDiagram.svg"><img alt="resource environment diagram Overview of the repository" src="../_images/ResourceEnvironmentDiagram.svg" width="750" /></a>
 </figure>
-<p>The resource environment consists of 3 hardware devices (<em>StorageServer</em>, <em>TerminalServer</em>, <em>MachineController</em>). They are connected by the network device <em>ProductionNetwork</em>.</p>
+<p>The resource environment consists of 3 hardware devices (<em>StorageServer</em>, <em>TerminalServer</em>, <em>MachineController</em>), connected by the network device <em>ProductionNetwork</em>.</p>
 </section>
 <section id="allocation-model">
 <h3>Allocation-Model<a class="headerlink" href="#allocation-model" title="Permalink to this heading"></a></h3>
-<figure class="align-default" id="allocationmaintenance">
-<a class="reference internal image-reference" href="../_images/maintenanceAllocation.svg"><img alt="allocation diagram" src="../_images/maintenanceAllocation.svg" width="750px" /></a>
-<figcaption>
-<p><span class="caption-text">Overview of the repository</span><a class="headerlink" href="#allocationmaintenance" title="Permalink to this image"></a></p>
-</figcaption>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/maintenanceAllocation.svg"><img alt="allocation diagram Overview of the allocation" src="../_images/maintenanceAllocation.svg" width="750" /></a>
 </figure>
-<p>The allocation model stores the deployment of the components on the hardware resources. Here importantly, the <em>StorageServer</em> has allocated both storage components.</p>
+<p>The allocation model stores the deployment of the components on the hardware resources. Importantly, the <em>StorageServer</em> has allocated both storage components.</p>
 </section>
 </section>
 <section id="access-control">
 <h2>Access Control<a class="headerlink" href="#access-control" title="Permalink to this heading"></a></h2>
-<p>Our model contains an access control poliy, which grants the Admin access to the <em>TerminalServer</em> and <em>StorageServer</em>. The <em>access</em> service from the <em>TerminalComponent</em> and <em>MachineComponent</em> have the rule that a <em>Technican</em> can access them in a <em>failure</em> state. All services from the <em>ProductionStorageComponent</em> can be accessed by the machine and all services from the <em>ProductStorageComponent</em> are only accessible by a <em>ProductDeveloper</em>.</p>
+<p>Our model contains an access control policy that grants the <em>Admin</em> access to the <em>TerminalServer</em> and <em>StorageServer</em>. The <em>access</em> service from the <em>TerminalComponent</em> and <em>MachineComponent</em> allows a <em>Technician</em> to access them in a <em>failure</em> state. All services from the <em>ProductionStorageComponent</em> can be accessed by the machine, while all services from the <em>ProductStorageComponent</em> are only accessible by a <em>ProductDeveloper</em>.</p>
 </section>
+<section id="application">
+<h2>Application<a class="headerlink" href="#application" title="Permalink to this heading"></a></h2>
 <section id="attack-propagation">
-<h2>Attack Propagation<a class="headerlink" href="#attack-propagation" title="Permalink to this heading"></a></h2>
-<p>We added the vulnerability <em>CVE-2021-28374</em> to the <em>TerminalServer</em>. In our case the vulnerability will leak the <em>Admin</em> credential and can be exploited from every device. The attacker has the ability to exploit <em>CWE-312</em> and the starting point of the attacker is the <em>TerminalComponent</em>.</p>
-<section id="expected-output">
-<h3>Expected Output<a class="headerlink" href="#expected-output" title="Permalink to this heading"></a></h3>
-<p>The expected output is an attack path from the <em>TerminalComponent</em> to the storage components. The attacker should exploit the vulnerability of the <em>TerminalServer</em> and gain there the <em>Admin</em> credential. These credential should then be used to propagate further.
-The concrete compromised elements should be:</p>
+<h3>Attack Propagation<a class="headerlink" href="#attack-propagation" title="Permalink to this heading"></a></h3>
+<p>We added the vulnerability <em>CVE-2021-28374</em> to the <em>TerminalServer</em>. In our case, the vulnerability leaks the <em>Admin</em> credential and can be exploited from every device. The attacker has the ability to exploit <em>CWE-312</em>, and the starting point of the attacker is the <em>TerminalComponent</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The vulnerability was remapped. In our examples, we still use the old mapping.</p>
+</div>
+<p><strong>Expected Output</strong>: The expected output is an attack path from the <em>TerminalComponent</em> to the storage components. The attacker should exploit the vulnerability of the <em>TerminalServer</em> and gain the <em>Admin</em> credential. These credentials should then be used to propagate further. The concrete compromised elements should be:</p>
 <ul class="simple">
 <li><p><em>Assembly_TerminalComponent</em> (as starting point)</p></li>
 <li><p><em>TerminalServer</em></p></li>

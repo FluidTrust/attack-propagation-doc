@@ -19,7 +19,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="XACML Transformation" href="XACMLTransformation.html" />
+    <link rel="next" title="Developer Information for the Targeted Attack Graph Analysis" href="AttackSurface.html" />
     <link rel="prev" title="Developer Information for the Attack Propagation Analysis" href="AttackPropagationAnalysis.html" /> 
 </head>
 
@@ -50,10 +50,12 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Documentation</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="AttackPropagationAnalysis.html">Developer Information for the Attack Propagation Analysis</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Developer Information for the Scenario Analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction-emf">Introduction EMF</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#scenario-analysis-workflow">Scenario Analysis Workflow</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#scenario-analysis">Scenario Analysis</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="AttackSurface.html">Developer Information for the Targeted Attack Graph Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="XACMLTransformation.html">XACML Transformation</a></li>
 </ul>
 </li>
@@ -86,6 +88,10 @@
              
   <section id="developer-information-for-the-scenario-analysis">
 <h1>Developer Information for the Scenario Analysis<a class="headerlink" href="#developer-information-for-the-scenario-analysis" title="Permalink to this heading"></a></h1>
+<section id="introduction-emf">
+<h2>Introduction EMF<a class="headerlink" href="#introduction-emf" title="Permalink to this heading"></a></h2>
+<p>For new developers, we recommend to work through EMF tutorials. One good candidate are the tutorials from <a class="reference external" href="https://www.vogella.com/tutorials/EclipseEMF/article.html">Vogella</a></p>
+</section>
 <section id="scenario-analysis-workflow">
 <h2>Scenario Analysis Workflow<a class="headerlink" href="#scenario-analysis-workflow" title="Permalink to this heading"></a></h2>
 <p>The workflow of the analysis is defined in the bundle <em>org.palladiosimulator.pcm.confidentiality.context.analysis.execution</em> and the class <a class="reference external" href="https://updatesite.palladio-simulator.com/fluidtrust/palladio-addons-contextconfidentiality-analysis/releases/5.2/javadoc/org/palladiosimulator/pcm/confidentiality/context/analysis/execution/workflow/ScenarioAnalysisWorkflow.html">ScenarioAnalysisWorkflow</a>. It consists first of loading the different models. Then the analysis is performed. The last step is to save the results.</p>
@@ -102,7 +108,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="AttackPropagationAnalysis.html" class="btn btn-neutral float-left" title="Developer Information for the Attack Propagation Analysis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="XACMLTransformation.html" class="btn btn-neutral float-right" title="XACML Transformation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="AttackSurface.html" class="btn btn-neutral float-right" title="Developer Information for the Targeted Attack Graph Analysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

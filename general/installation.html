@@ -94,7 +94,7 @@
 <p class="admonition-title">Note</p>
 <p>If you only want to use the metamodel, you also can use Java 11. However you have to use the Java11 branch and manually install it.</p>
 </div>
-<p>If not our <a class="reference internal" href="#palladio-bench-attack-drop">Palladio-Bench (Attack Drop)</a> is used, our tooling requires an <a class="reference external" href="https://www.eclipse.org/downloads/packages/release/2021-12/r/eclipse-modeling-tools">Eclipse Modelling Edition</a> (min. 2021-12) with the following dependencies:</p>
+<p>If not our <a class="reference internal" href="#palladio-bench-attack-drop">Palladio-Bench (Attack Drop)</a> is used, our tooling requires an <a class="reference external" href="https://www.Eclipse.org/downloads/packages/release/2021-12/r/Eclipse-modeling-tools">Eclipse Modelling Edition</a> (min. 2021-12) with the following dependencies:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://sdqweb.ipd.kit.edu/wiki/PCM_Installation">PCM 5.1+</a></p></li>
 <li><p><a class="reference external" href="https://github.com/MDSD-Tools/Library-EMFEditUtils">tools.mdsd.library.emfeditutils</a></p></li>
@@ -109,7 +109,7 @@
 <li><p>jakarta.activation version=”1.2.2”</p></li>
 <li><p>org.apache.logging.log4j version=”2.8.2”</p></li>
 </ul>
-<p>The eclipse dependencies without a link are available from <a class="reference external" href="https://download.eclipse.org/tools/orbit/downloads/drops/R20210602031627/">Eclipse Orbit</a></p>
+<p>The Eclipse dependencies without a link are available from <a class="reference external" href="https://download.Eclipse.org/tools/orbit/downloads/drops/R20210602031627/">Eclipse Orbit</a></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>We provide an Eclipse installation file. The file assumes that the Eclipse Modelling Tools are already installed. After downloading the file you can install it in Eclipse via File-&gt;Import-&gt;Install-&gt;Install Software Items from File and then selecting the installation file. <a class="reference download internal" download="" href="../_downloads/91a431b5786405a5c4e08fec18496c45/dependencies.p2f"><code class="xref download docutils literal notranslate"><span class="pre">Install-File</span></code></a>.</p>
@@ -124,7 +124,7 @@
 <p>We created an Eclipse product, which can be used to start our analysis and view the models. It should be configured that it automatically opens a workspace with the necessary projects loaded.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://updatesite.palladio-simulator.com/fluidtrust/palladio-bench-product-attackerpropagation/releases/latest/">Download</a> and unpack the version for your operating system</p></li>
-<li><p>Start the application by executing the <em>PalladioBench</em> binary (not the eclipse one!)</p></li>
+<li><p>Start the application by executing the <em>PalladioBench</em> binary (not the Eclipse one!)</p></li>
 <li><dl class="simple">
 <dt>After the load screen you should see 3 Projects in the Modelviewer on the left side:</dt><dd><ul>
 <li><p>edu.kit.ipd.sdq.kamp4attack.tests</p></li>
@@ -147,15 +147,25 @@
 <section id="manual-installation">
 <span id="id2"></span><h2>Manual Installation<a class="headerlink" href="#manual-installation" title="Permalink to this heading"></a></h2>
 <p>Please make sure that you have installed the <a class="reference internal" href="#dependencies">Dependencies</a>. Clone the <a class="reference external" href="https://github.com/FluidTrust/Palladio-Addons-ContextConfidentiality-Metamodel">metamodel</a> and <a class="reference external" href="https://github.com/FluidTrust/Palladio-Addons-ContextConfidentiality-Analysis">analysis</a> repositories. The repositories do not contain the source code for the stored metamodels. The easiest solution to create the source code is to build each repository with maven for instance with <code class="docutils literal notranslate"><span class="pre">mvn</span> <span class="pre">clean</span> <span class="pre">verify</span></code>. If there is no maven available see <a class="reference internal" href="#code-generation"><span class="std std-ref">Code Generation (without Maven)</span></a>.</p>
-<p>After downloading the source code. The necessary plugins for applying the projects are in each repository in the <em>bundle</em> folder. All folder in this folder contain plugin projects and must be imported into the eclipse workspace. After importing the projects, an inner eclipse application can be started, where the attack propagation is installed.</p>
+<p>After downloading the source code. The necessary plugins for applying the projects are in each repository in the <em>bundle</em> folder. All folder in this folder contain plugin projects and must be imported into the Eclipse workspace. After importing the projects, an inner Eclipse application can be started, where the attack propagation is installed.</p>
 <section id="code-generation-without-maven">
 <span id="code-generation"></span><h3>Code Generation (without Maven)<a class="headerlink" href="#code-generation-without-maven" title="Permalink to this heading"></a></h3>
-<p>TBD</p>
+<p>The metamodel source code can be generated without using the Maven workflow. However, this process must be triggered manually for each metamodel in Eclipse. The code generation utilizes the MWE2 workflow, and the MWE2 workflow engine must be installed in Eclipse. After installing the engine, the code generation projects for our metamodels can be found in the <cite>releng</cite> subfolders of each Git repository. These projects are identified by the file extension <cite>*.mwe2*</cite>.</p>
+<p>To generate the metamodel source code, follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Import each project ending with <cite>*.mwe2*</cite> into the workspace. The workspace should also contain the Eclipse projects for the metamodels.</p></li>
+<li><p>For each metamodel, execute the <cite>workflow/generate.mwe2</cite> workflow. You can do this by selecting the file and then opening the context menu (right-click) and selecting <em>Run as</em> -&gt; <em>MWE2 Workflow</em>. This will create the required source code and automatically insert the custom code.</p></li>
+<li><p>If necessary, the generated code can be deleted by executing the <cite>clean.mwe2</cite> workflow.</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The regular genmodels from EMF <strong>cannot</strong> be used because the analysis requires custom code, which is inserted by the workflows.</p>
+</div>
 </section>
 </section>
 <section id="update-site-installation">
 <span id="id3"></span><h2>Update Site Installation<a class="headerlink" href="#update-site-installation" title="Permalink to this heading"></a></h2>
-<p>We provide also two Eclipse update site for our attack propagation. The eclipse installation needs to have the <a class="reference internal" href="#dependencies"><span class="std std-ref">Dependencies</span></a> installed. After installing the dependencies, our attack propagation analysis can be installed. First add and install our <a class="reference external" href="https://updatesite.palladio-simulator.com/fluidtrust/palladio-addons-contextconfidentiality-metamodel/nightly/">metamodel</a>. Afterwards, our <a class="reference external" href="https://updatesite.palladio-simulator.com/fluidtrust/palladio-addons-contextconfidentiality-analysis/nightly/">analysis</a> can be installed.</p>
+<p>We provide also two Eclipse update site for our attack propagation. The Eclipse installation needs to have the <a class="reference internal" href="#dependencies"><span class="std std-ref">Dependencies</span></a> installed. After installing the dependencies, our attack propagation analysis can be installed. First add and install our <a class="reference external" href="https://updatesite.palladio-simulator.com/fluidtrust/palladio-addons-contextconfidentiality-metamodel/nightly/">metamodel</a>. Afterwards, our <a class="reference external" href="https://updatesite.palladio-simulator.com/fluidtrust/palladio-addons-contextconfidentiality-analysis/nightly/">analysis</a> can be installed.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>We also provide a complete Eclipse installation file. Using this installation file, it is not necessary to install the dependencies before, since they are bundled within. The file assumes that the Eclipse Modelling Tools are already installed. After downloading the file you can install it in Eclipse via File-&gt;Import-&gt;Install-&gt;Install Software Items from File and then selecting the installation file. <a class="reference download internal" download="" href="../_downloads/03fc2a2bcc1abc6e7bf96fcb0fc8ed07/full-installation.p2f"><code class="xref download docutils literal notranslate"><span class="pre">Install-File</span></code></a>.</p>

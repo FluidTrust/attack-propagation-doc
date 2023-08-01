@@ -13,3 +13,4 @@ Here, we describe the general usage of our tooling. In the different sections, w
    metamodel_attacker
    analysis_scenario_usage
    analysis_attack_propagation
+   analysis_attack_graph

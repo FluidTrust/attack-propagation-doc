@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developer Information for the Targeted Attack Graph Analysis &mdash; Palladio Attack Propagation 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="XACML Transformation" href="XACMLTransformation.html" />
+    <link rel="prev" title="Developer Information for the Scenario Analysis" href="ScenarioAnalysis.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Palladio Attack Propagation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../general/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../application_scenarios/index.html">Application Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/index.html">User Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="AttackPropagationAnalysis.html">Developer Information for the Attack Propagation Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ScenarioAnalysis.html">Developer Information for the Scenario Analysis</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Developer Information for the Targeted Attack Graph Analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction-emf">Introduction EMF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#attack-propagation-workflow">Attack Propagation Workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#attack-propagation-analysis">Attack Propagation Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="XACMLTransformation.html">XACML Transformation</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Palladio Attack Propagation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Developer Documentation</a></li>
+      <li class="breadcrumb-item active">Developer Information for the Targeted Attack Graph Analysis</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/FluidTrust/attack-propagation-doc/blob/main/docs/source/developer/AttackSurface.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="developer-information-for-the-targeted-attack-graph-analysis">
+<h1>Developer Information for the Targeted Attack Graph Analysis<a class="headerlink" href="#developer-information-for-the-targeted-attack-graph-analysis" title="Permalink to this heading"></a></h1>
+<section id="introduction-emf">
+<h2>Introduction EMF<a class="headerlink" href="#introduction-emf" title="Permalink to this heading"></a></h2>
+<p>For new developers, we recommend to work through EMF tutorials. One good candidate are the tutorials from <a class="reference external" href="https://www.vogella.com/tutorials/EclipseEMF/article.html">Vogella</a></p>
+</section>
+<section id="attack-propagation-workflow">
+<h2>Attack Propagation Workflow<a class="headerlink" href="#attack-propagation-workflow" title="Permalink to this heading"></a></h2>
+<p>The workflow of the analysis is defined in the bundle <em>org.palladiosimulator.pcm.confidentiality.context.analysis.execution</em> and the class <a class="reference external" href="https://updatesite.palladio-simulator.com/fluidtrust/palladio-addons-contextconfidentiality-analysis/releases/5.2/javadoc/org/palladiosimulator/pcm/confidentiality/context/analysis/execution/workflow/AttackSurfaceAnalysisWorkflow.html">AttackSurfaceAnalysisWorkflow</a>. It consists first of loading the different models. Afterwards, the vulnerabilities from the Repository are rolled out on the AssemblyContext. Then the analysis is performed. The last step is to save the results.</p>
+<p>The analysis execution job (<a class="reference external" href="https://updatesite.palladio-simulator.com/fluidtrust/palladio-addons-contextconfidentiality-analysis/releases/5.2/javadoc/org/palladiosimulator/pcm/confidentiality/context/analysis/execution/workflow/job/AttackSurfaceAnalysisJob.html">AttackSurfaceAnalysisJob</a>), then executes the analysis. The analysis does not use a PDP or transform the XACML policies. The analysis has their own access decision part implemented.</p>
+</section>
+<section id="attack-propagation-analysis">
+<h2>Attack Propagation Analysis<a class="headerlink" href="#attack-propagation-analysis" title="Permalink to this heading"></a></h2>
+<p>The main bundle for the attack propagation is <em>edu.kit.ipd.sdq.attacksurface</em>. Here, the entry point for the analysis is <a class="reference external" href="https://updatesite.palladio-simulator.com/fluidtrust/palladio-addons-contextconfidentiality-analysis/releases/5.2/javadoc/edu/kit/ipd/sdq/kamp4attack/core/AttackSurfaceAnalysis.html">AttackSurfaceAnalysis</a>. It contains in the <em>runChangePropagationAnalysis</em> the main steps for identifying the attack paths.</p>
+<p>The first step is to initialize the vulnerability map. This is basically a map containing which contains the ID of an architectural elements as key and the corresponding vulnerabilities. We use the map as a cache for vulnerabilities to speed up the vulnerability search. Otherwise, the analysis always have to search lists to identify vulnerable elements.</p>
+<p>In the next step, the analysis creates the attack graph. The attack graph is created in parallel and uses Google Guava. The responsible class is <a href="#id1"><span class="problematic" id="id2">`AttackGraphCreation &lt;&gt;`_</span></a>.  This class already filters out all edges, which contain vulnerabilities that are not relevant based on the specified filters in the attacker model.</p>
+<p>After creating the attack graph the attack paths are identified. This is done in the class <a href="#id3"><span class="problematic" id="id4">`AttackPathCreation &lt;&gt;`_</span></a> and the attack path identification is delegated to the class <a href="#id5"><span class="problematic" id="id6">`DefaultAttackPathFinder &lt;&gt;`_</span></a>. This class converts the Guava graph to a JGrapht graph and then searches for a path from one of the starting point to the target. For the path identification it uses the YenKShortestPath implementation from JGrapht with the <a href="#id7"><span class="problematic" id="id8">`CredentialValidator &lt;&gt;`_</span></a> as a custom path validator. This path validator checks whether path requires one of the required credentials and then invalidates the path. The DefaultAttackPathFinder class also provides a method to export the attack graph as a dot file. This is helpful to get a visualization of the actual attack graph. After the identification of the paths, these are stored in the Blackboard.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ScenarioAnalysis.html" class="btn btn-neutral float-left" title="Developer Information for the Scenario Analysis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="XACMLTransformation.html" class="btn btn-neutral float-right" title="XACML Transformation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Dependability of Software-intensive Systems (DSiS) group, Institute of Information Security and Dependability (KASTEL), Karlsruhe Institute of Technology (KIT).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
