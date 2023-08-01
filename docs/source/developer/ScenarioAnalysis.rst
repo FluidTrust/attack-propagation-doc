@@ -1,6 +1,11 @@
 Developer Information for the Scenario Analysis
 ===============================================
 
+Introduction EMF
+++++++++++++++++
+
+For new developers, we recommend to work through EMF tutorials. One good candidate are the tutorials from `Vogella <https://www.vogella.com/tutorials/EclipseEMF/article.html>`_
+
 Scenario Analysis Workflow
 +++++++++++++++++++++++++++
 

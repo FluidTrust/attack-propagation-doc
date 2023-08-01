@@ -8,5 +8,6 @@ Developer Documentation
 
     AttackPropagationAnalysis
     ScenarioAnalysis
+    AttackSurface
     XACMLTransformation
 
