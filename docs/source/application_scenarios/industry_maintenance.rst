@@ -5,7 +5,7 @@ Background Setting
 ------------------
 
 
-This scenario is settled in an Industry 4.0 environment based on a previous publicatio :cite:p:`trustInitialPaper`. It involves two companies: one produces goods using a machine that generates log data for maintenance purposes, and the other is a service contractor responsible for maintaining and repairing the machine. The service contractor should only have access to the machine's log data in case of a machine failure, while access should be denied in other cases. Additionally, there are other components in the network used for storing confidential information, but they are not directly relevant to the machine's operation.
+This scenario is settled in an Industry 4.0 environment based on a previous publication :cite:p:`trustInitialPaper`. It involves two companies: one produces goods using a machine that generates log data for maintenance purposes, and the other is a service contractor responsible for maintaining and repairing the machine. The service contractor should only have access to the machine's log data in case of a machine failure, while access should be denied in other cases. Additionally, there are other components in the network used for storing confidential information, but they are not directly relevant to the machine's operation.
 
 Architectural Model
 -------------------
