@@ -1,4 +1,4 @@
-# Documenation for the Palladio Attack Propagation Analysis
+# Documentation for the Palladio Attack Propagation Analysis
 
 ## Local build
 
