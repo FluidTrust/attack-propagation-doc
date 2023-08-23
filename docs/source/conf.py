@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Palladio Attack Propagation'
-copyright = '2022, Dependability of Software-intensive Systems (DSiS) group, Institute of Information Security and Dependability (KASTEL), Karlsruhe Institute of Technology (KIT)'
+copyright = '2023, DSiS, KASTEL, Karlsruhe Institute of Technology (KIT)'
 author = 'Maximilian Walter'
 
 # The full version, including alpha/beta/rc tags
@@ -33,8 +33,7 @@ release = '1.0.0'
 extensions = [
     'sphinxcontrib.bibtex',
     'sphinx.ext.intersphinx',
-    'sphinx.ext.autosectionlabel',
-    'myst_parser'
+    'sphinx.ext.autosectionlabel'
 ]
 
 
@@ -70,13 +69,13 @@ html_static_path = ['_static']
 source_suffix = {
     '.rst': 'restructuredtext',
     '.txt': 'markdown',
-    '.md': 'markdown',
 }
 
 
-
-# Bib files
-bibtex_bibfiles = ['references.bib']
+# Include custom CSS
+html_css_files = [
+    'css/custom.css',
+]
 
 html_context = {
   'display_github': True,
@@ -85,8 +84,3 @@ html_context = {
   'github_version': 'main',
   'conf_py_path': '/docs/source/'
 }
-
-myst_enable_extensions = [
-  'html_image',
-  'colon_fence'
-]

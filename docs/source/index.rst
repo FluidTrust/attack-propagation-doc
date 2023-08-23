@@ -26,8 +26,7 @@ This contains the documentation for multiple Eclipse plugins to analyze confiden
    * find attack paths to a targeted element
    * uses filters to identify relevant attack path
 
-.. note::
-	under active development
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
@@ -39,15 +38,8 @@ This contains the documentation for multiple Eclipse plugins to analyze confiden
    
 
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`search`
-
-
 References
 ==========
 
-.. bibliography::
+.. bibliography:: references.bib
+   :style: plain
