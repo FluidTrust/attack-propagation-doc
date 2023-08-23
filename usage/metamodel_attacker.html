@@ -7,6 +7,7 @@
   <title>Modeling Attackers &amp; Vulnerabilities &mdash; Palladio Attack Propagation 1.0.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -105,7 +106,7 @@
 <p>In the vulnerability container the actual vulnerabilities are specified. We differ between <em>CVE Vulnerability</em> and <em>CWE Vulnerability</em>. The first one is based on the <a class="reference external" href="https://cve.mitre.org/">CVE</a> concept and symbolize concrete vulnerabilities. For example, the vulnerability <em>CVE-2021-28374</em> in the <a class="reference internal" href="../application_scenarios/industry_maintenance.html"><span class="doc">Maintenance Scenario (Running Example)</span></a> is a concrete vulnerability.</p>
 <p>The second type is based on  on <a class="reference external" href="https://cwe.mitre.org/">CWEs</a> and symbolize general vulnerabilities or weakness of the sofware. For example the storage of passwords as clear text is a general vulnerability. In CWE this is <a class="reference external" href="https://cwe.mitre.org/data/definitions/312.html">CWE 312</a></p>
 <a class="reference internal image-reference" href="../_images/vulnerabilitySpecification.png"><img alt="vulnerability specification Vulnerability Specification" src="../_images/vulnerabilitySpecification.png" style="width: 600px;" /></a>
-<p>The screenshot shows an exemplary <em>CVE Vulnerability</em> from the <a class="reference internal" href="../application_scenarios/industry_maintenance.html"><span class="doc">Maintenance Scenario (Running Example)</span></a>. The <em>CVE Vulnerability</em> and <em>CWE Vulnerability</em> share most of the properties only the <em>CVE ID</em> is exclusive to a <em>CVE Vulnerability</em>. Most of these properties are based on the <a class="reference external" href="https://www.first.org/cvss/specification-document">CVSS specification</a>. A detailed description of most properties can be read in our paper <span id="id1">[<a class="reference internal" href="../index.html#id5" title="Maximilian Walter, Robert Heinrich, and Ralf Reussner. Architectural attack propagation analysis for identifying confidentiality issues. In 2022 IEEE 19th International Conference on Software Architecture (ICSA), 12 S. Institute of Electrical and Electronics Engineers (IEEE), 2022. URL: https://publikationen.bibliothek.kit.edu/1000146787, doi:10.1109/ICSA53651.2022.00009.">WHR22</a>]</span>. We will shortly describe the common properties without <em>CVEs</em> and <em>CWEs</em>:</p>
+<p>The screenshot shows an exemplary <em>CVE Vulnerability</em> from the <a class="reference internal" href="../application_scenarios/industry_maintenance.html"><span class="doc">Maintenance Scenario (Running Example)</span></a>. The <em>CVE Vulnerability</em> and <em>CWE Vulnerability</em> share most of the properties only the <em>CVE ID</em> is exclusive to a <em>CVE Vulnerability</em>. Most of these properties are based on the <a class="reference external" href="https://www.first.org/cvss/specification-document">CVSS specification</a>. A detailed description of most properties can be read in our paper <span id="id1">[<a class="reference internal" href="../index.html#id5" title="Maximilian Walter, Robert Heinrich, and Ralf Reussner. Architectural attack propagation analysis for identifying confidentiality issues. In 2022 IEEE 19th International Conference on Software Architecture (ICSA), 12 S. Institute of Electrical and Electronics Engineers (IEEE), 2022. URL: https://publikationen.bibliothek.kit.edu/1000146787, doi:10.1109/ICSA53651.2022.00009.">4</a>]</span>. We will shortly describe the common properties without <em>CVEs</em> and <em>CWEs</em>:</p>
 <ul class="simple">
 <li><p><em>Attack Complexity</em>: Describes how complex an attack is. Possible values are <em>LOW</em> and <em>HIGH</em></p></li>
 <li><p><em>Attack Vector</em>: The location from which the vulnerability is exploitable. Possible values are <em>Network</em>, <em>Adjacent Network</em> (is interpreted as Network in the analysis), <em>Local</em></p></li>
@@ -170,7 +171,7 @@ This filter allows architects to filter out vulnerabilities based on a specific 
 <li><p><em>Exploit Filter</em>:
 This filter is responsible for filtering attacks based on the attackVector, attackComplexity, and UserInteraction attributes. It enables architects to identify attack paths that contain vulnerabilities that are easily exploitable. It is particularly useful for considering different attacker types.</p></li>
 </ol>
-<p>For more detailed descriptions of these properties, refer to <span id="id7">[<a class="reference internal" href="../index.html#id9" title="Maximilian Walter and Ralf Heinrich, Robert Reussner. Architecture-based attack path analysis for identifying potential security incidents. In 17th European Conference on Software Architecture (ECSA). 2023. accepted, to appear.">WH23</a>]</span>.</p>
+<p>For more detailed descriptions of these properties, refer to <span id="id7">[<a class="reference internal" href="../index.html#id9" title="Maximilian Walter and Ralf Heinrich, Robert Reussner. Architecture-based attack path analysis for identifying potential security incidents. In 17th European Conference on Software Architecture (ECSA). 2023. accepted, to appear.">3</a>]</span>.</p>
 </section>
 </section>
 </section>
@@ -186,7 +187,7 @@ This filter is responsible for filtering attacks based on the attackVector, atta
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Dependability of Software-intensive Systems (DSiS) group, Institute of Information Security and Dependability (KASTEL), Karlsruhe Institute of Technology (KIT).</p>
+    <p>&#169; Copyright 2023, DSiS, KASTEL, Karlsruhe Institute of Technology (KIT).</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

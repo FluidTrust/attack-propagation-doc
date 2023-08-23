@@ -1,0 +1,15 @@
+.clear-right {
+    clear: right;
+}
+
+.clear-left {
+    clear: left;
+}
+
+.clear-both {
+    clear: both;
+}
+
+span.linenos {
+    padding-right: 10px;
+}
